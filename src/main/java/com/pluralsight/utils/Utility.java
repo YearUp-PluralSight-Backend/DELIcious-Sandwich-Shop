@@ -1,11 +1,15 @@
 package com.pluralsight.utils;
 
+import com.pluralsight.gui.HomeScreen;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.Scanner;
 
 public class Utility {
 
-
     private static final Scanner input = new Scanner(System.in);
+    private  static final Logger logger = LogManager.getLogger(Utility.class);
 
     public static String getInputAsStringWithPrompt(String prompt) {
         System.out.println(prompt);
@@ -17,7 +21,7 @@ public class Utility {
 
             } while (value.isEmpty() && value.isBlank());
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            logger.error("Input Invalid!!!!!{e}", e);
         }
 
         return value;
