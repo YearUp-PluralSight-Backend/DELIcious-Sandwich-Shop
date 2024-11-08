@@ -5,12 +5,15 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.Scanner;
+import java.util.function.Consumer;
 
 public class Utility {
 
     private static final Scanner input = new Scanner(System.in);
     private  static final Logger logger = LogManager.getLogger(Utility.class);
 
+
+    public static Consumer<String> print = System.out::print;
     public static String getInputAsStringWithPrompt(String prompt) {
         System.out.println(prompt);
         String value = null;
