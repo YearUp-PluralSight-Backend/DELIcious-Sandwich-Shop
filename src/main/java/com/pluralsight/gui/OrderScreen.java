@@ -40,6 +40,26 @@ public class OrderScreen {
     }
 
     public void orderScreenMenu() {
-
+        String menu = """
+            ==================================================
+                       💖 SANDWICH HAVEN - ORDER SCREEN 💖
+            ==================================================
+                        
+                      🥪  BUILD YOUR PERFECT ORDER  🥪
+            --------------------------------------------------
+            
+            Select an option:
+            
+              🍞 1) Add Sandwich
+              🥤 2) Add Drink
+              🍟 3) Add Chips
+              🛒 4) Checkout
+              ❌ 0) Cancel Order - delete the order and return to the home screen
+            
+            ==================================================
+                         ❤️ THANK YOU FOR ORDERING ❤️
+            ==================================================
+            """;
+        System.out.println(menu);
     }
 }

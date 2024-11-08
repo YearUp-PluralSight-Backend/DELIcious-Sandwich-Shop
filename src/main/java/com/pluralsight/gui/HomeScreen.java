@@ -3,12 +3,13 @@ package com.pluralsight.gui;
 import com.pluralsight.utils.Utility;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import picocli.CommandLine;
 
 public class HomeScreen {
 
     private  static HomeScreen homeScreen;
-    private  static final Logger logger = LogManager.getLogger(HomeScreen.class);
-    private static final OrderScreen orderScreen = OrderScreen.getInstance();
+    private final Logger logger = LogManager.getLogger(HomeScreen.class);
+    private final OrderScreen orderScreen = OrderScreen.getInstance();
     private HomeScreen() {
 
 
@@ -22,7 +23,7 @@ public class HomeScreen {
         return homeScreen;
     }
 
-    public void HomeScreen() {
+    public void run() {
 
         boolean runningHomeScreen = true;
         try {
@@ -44,11 +45,25 @@ public class HomeScreen {
     private void updateAndPrintReceipt() {
     }
 
+//    @CommandLine.Option("")
     public void homeScreenMenu() {
 
         String menu =
                 """
-                
+                ============================================
+                        WELCOME TO SANDWICH HAVEN
+                ============================================
+        
+                            (  🍞 🥬 🥓  )
+                            DELICIOUS SANDWICHES
+        
+                Please choose an option:
+        
+                1. New Order
+                2. Exit
+        
+                ============================================
                 """;
-    }
+        System.out.print(menu);
+}
 }
