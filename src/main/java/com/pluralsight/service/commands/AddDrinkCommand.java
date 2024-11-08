@@ -3,12 +3,14 @@ package com.pluralsight.service.commands;
 import com.pluralsight.entity.Order;
 import com.pluralsight.entity.otherfood.Drink;
 import com.pluralsight.entity.sandwich.types.Size;
-import com.pluralsight.exceptions.InvalidDrinkSizeException;
 import com.pluralsight.service.Command;
 import com.pluralsight.utils.Utility;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * Command to add a drink to an order.
+ */
 public class AddDrinkCommand implements Command {
 
     private final Logger logger = LogManager.getLogger(AddDrinkCommand.class);
@@ -17,8 +19,11 @@ public class AddDrinkCommand implements Command {
     private double basePrice;
     private String drinkSize;
 
-
-
+    /**
+     * Constructor to create an AddDrinkCommand.
+     *
+     * @param order the order to which the drink will be added
+     */
     public AddDrinkCommand(Order order) {
         this.order = order;
 
@@ -36,6 +41,9 @@ public class AddDrinkCommand implements Command {
         }
     }
 
+    /**
+     * Executes the command to add the drink to the order.
+     */
     @Override
     public void execute() {
         drink.setSize(Size.valueOf(drinkSize));
