@@ -59,6 +59,16 @@
             <version>1.18.34</version>
         </dependency>
 
+        <!--  hosting the template       -->
+        <!-- https://mvnrepository.com/artifact/com.samskivert/jmustache -->
+        <!-- https://mvnrepository.com/artifact/com.samskivert/jmustache -->
+        <dependency>
+            <groupId>com.samskivert</groupId>
+            <artifactId>jmustache</artifactId>
+            <version>1.15</version>
+        </dependency>
+
+
     </dependencies>
 
 
