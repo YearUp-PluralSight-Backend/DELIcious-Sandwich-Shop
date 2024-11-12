@@ -17,7 +17,7 @@ public class AddDrinkCommand implements Command {
     private final Order order;
     private final Drink drink;
     private double basePrice;
-    private String drinkSize;
+    private final String drinkSize;
 
     /**
      * Constructor to create an AddDrinkCommand.
@@ -25,8 +25,8 @@ public class AddDrinkCommand implements Command {
      * @param order the order to which the drink will be added
      */
     public AddDrinkCommand(Order order) {
+        logger.info("Executing AddCommand ----");
         this.order = order;
-
         this.drinkSize = Utility.getInputAsStringWithPrompt("Enter the drink size (SMALL, MEDIUM, LARGE): ").toUpperCase();
         this.drink = new Drink();
 
@@ -36,6 +36,7 @@ public class AddDrinkCommand implements Command {
             case "LARGE" -> this.basePrice = 3.0;
             default -> {
                 String errorMessage = "Invalid drink size: " + drinkSize;
+                Utility.print.accept(errorMessage);
                 logger.error(errorMessage);
             }
         }
@@ -55,6 +56,8 @@ public class AddDrinkCommand implements Command {
         }
 
         order.getCart().add(drink);
-        logger.info("Drink added to your order: {} size, ${}", drinkSize, basePrice);
+        String message = "Drink added to your order: {%s}, ${%s}".formatted(drinkSize, basePrice);
+        Utility.print.accept(message);
+        logger.info(message);
     }
 }
