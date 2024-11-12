@@ -5,6 +5,8 @@ import com.pluralsight.entity.otherfood.Drink;
 import com.pluralsight.entity.sandwich.Sandwich;
 import com.pluralsight.utils.ConstantValue;
 import lombok.Data;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -17,6 +19,8 @@ import java.util.Random;
 @Data
 public class Order {
 
+    private static final Logger logger = LogManager.getLogger(Order.class);
+
     private long orderNumber;
     private List<Food> cart;
     private String createTime;
@@ -28,6 +32,7 @@ public class Order {
         this.orderNumber = generatesOrderNumber();
         createTime = LocalDateTime.now().format(ConstantValue.DATE_TIME_FORMATTER);
         cart = new ArrayList<>();
+        logger.info("New order created with order number: {}", orderNumber);
     }
 
     /**
@@ -36,7 +41,9 @@ public class Order {
      * @return the total price of the order
      */
     public double calculateTotalPrice() {
-        return cart.stream().mapToDouble(Food::getPrice).sum();
+        double total = cart.stream().mapToDouble(Food::getPrice).sum();
+        logger.debug("Calculated total price: {}", total);
+        return total;
     }
 
     /**
@@ -45,7 +52,9 @@ public class Order {
      * @return a random order number between 1 and 200000
      */
     private long generatesOrderNumber() {
-        return new Random().nextLong(1, 200001);
+        long orderNum = new Random().nextLong(1, 200001);
+        logger.debug("Generated order number: {}", orderNum);
+        return orderNum;
     }
 
     /**
@@ -54,7 +63,9 @@ public class Order {
      * @return the number of chips in the cart
      */
     public long getNumberOfChips() {
-        return cart.stream().filter(food -> food instanceof Chips).count();
+        long count = cart.stream().filter(food -> food instanceof Chips).count();
+        logger.debug("Number of chips in cart: {}", count);
+        return count;
     }
 
     /**
@@ -63,7 +74,9 @@ public class Order {
      * @return the number of drinks in the cart
      */
     public long getNumberOfDrinks() {
-        return cart.stream().filter(food -> food instanceof Drink).count();
+        long count = cart.stream().filter(food -> food instanceof Drink).count();
+        logger.debug("Number of drinks in cart: {}", count);
+        return count;
     }
 
     /**
@@ -72,7 +85,9 @@ public class Order {
      * @return the number of sandwiches in the cart
      */
     public long getNumberOfSandwiches() {
-        return cart.stream().filter(food -> food instanceof Sandwich).count();
+        long count = cart.stream().filter(food -> food instanceof Sandwich).count();
+        logger.debug("Number of sandwiches in cart: {}", count);
+        return count;
     }
 
     /**
@@ -81,6 +96,26 @@ public class Order {
      * @return the total number of items in the cart
      */
     public long getNumberOfItems() {
-        return cart.size();
+        long count = cart.size();
+        logger.debug("Total number of items in cart: {}", count);
+        return count;
+    }
+
+    /**
+     * Adds food to the cart
+     * @param food the food will add to the cart
+     * @return the item being added to the cart
+     */
+    public boolean addFood(Food food) {
+        boolean add = cart.add(food);
+        logger.debug("added Food: {}", food);
+        return true;
+    }
+
+    /**
+     *  Reviews the food items in the cart
+     */
+    public void reviewCart() {
+        cart.forEach(System.out::println);
     }
 }
