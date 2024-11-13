@@ -1,4 +1,4 @@
-package com.pluralsight.entity.sandwich.types;
+package com.pluralsight.entity.sandwich.toppings;
 
 
 import lombok.AllArgsConstructor;
@@ -17,9 +17,4 @@ public abstract class SandwichIngredient {
     public SandwichIngredient(String name) {
         this.name = name;
     }
-
-    public abstract double calculatePrice(Size size);
-
-    public abstract double calculateCalories(Size size);
-
 }
