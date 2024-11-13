@@ -22,8 +22,11 @@ public class Order {
     private static final Logger logger = LogManager.getLogger(Order.class);
 
     private long orderNumber;
-    private List<Food> cart;
     private String createTime;
+    private double totalPrice;
+    private double totalCalories;
+    private List<Food> cart;
+
 
     /**
      * Constructor to create an Order with a generated order number and current time.
@@ -42,7 +45,20 @@ public class Order {
      */
     public double calculateTotalPrice() {
         double total = cart.stream().mapToDouble(Food::getPrice).sum();
+        this.totalPrice = total;
         logger.debug("Calculated total price: {}", total);
+        return total;
+    }
+
+    /**
+     * calculate the total calories of all items in the cart
+     *
+     * @return the total calories of the order
+     */
+    public double getTotalCalories() {
+        double total = cart.stream().mapToDouble(Food::getCalories).sum();
+        this.totalCalories = total;
+        logger.debug("Calculated total calories: {}", total);
         return total;
     }
 
