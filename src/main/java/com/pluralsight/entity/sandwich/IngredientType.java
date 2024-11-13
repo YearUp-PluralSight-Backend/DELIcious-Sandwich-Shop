@@ -1,4 +1,4 @@
-package com.pluralsight.entity.sandwich.toppings;
+package com.pluralsight.entity.sandwich;
 
 import com.pluralsight.exceptions.InvalidIngredientException;
 
