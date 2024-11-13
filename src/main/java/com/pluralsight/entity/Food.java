@@ -1,6 +1,6 @@
 package com.pluralsight.entity;
 
-import com.pluralsight.entity.sandwich.types.Size;
+import com.pluralsight.entity.sandwich.toppings.Size;
 import lombok.Data;
 
 import javax.validation.constraints.Min;
@@ -12,6 +12,13 @@ import javax.validation.constraints.NotNull;
  */
 @Data
 public abstract class Food {
+
+
+    /**
+     * Cannot null
+     */
+    @NotNull
+    private String name;
 
     /**
      * The size of the food item.
@@ -49,5 +56,17 @@ public abstract class Food {
      */
     public Food(Size size) {
         this.size = size;
+    }
+
+
+    @Override
+    public String toString() {
+        return String.format(
+                "🍽️ **%s**\n" +
+                        "   Size: %s\n" +
+                        "   Price: $%.2f\n" +
+                        "   Calories: %.0f kcal",
+                this.name, this.size, this.price, this.calories
+        );
     }
 }
