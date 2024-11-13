@@ -1,10 +1,9 @@
-package com.pluralsight.gui;
+package com.pluralsight.console_gui;
 
-import com.pluralsight.utils.Menu;
+import com.pluralsight.utils.ConstantValue;
 import com.pluralsight.utils.Utility;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import picocli.CommandLine;
 
 /**
  * Class representing the home screen of the application.
@@ -41,12 +40,14 @@ public class HomeScreen {
         boolean runningHomeScreen = true;
         try {
             while (runningHomeScreen) {
-                Utility.print.accept(Menu.HOME_MENU);
-                String option = Utility.getInputAsStringWithPrompt("->  ");
-
+                Utility.print.accept(ConstantValue.HOME_MENU);
+                String option = Utility.getInputAndReturnStringWithPrompt("->  ");
                 switch (option) {
-                    case "1" -> orderScreen.displayOrderScreen();
-                    case "0" -> runningHomeScreen = false;
+                    case "1" -> {
+                        orderScreen.displayOrderScreen();
+                        Utility.loadingAnimation(4);
+                    }
+                    case "2" -> runningHomeScreen = false;
                 }
             }
         } finally {
@@ -55,7 +56,7 @@ public class HomeScreen {
     }
 
     /**
-     * Updates and prints the receipt.
+     * Updates and prints the receipt-file.mustache
      */
     private void updateAndPrintReceipt() {
     }

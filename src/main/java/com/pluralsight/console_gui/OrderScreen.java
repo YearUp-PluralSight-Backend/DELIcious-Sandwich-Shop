@@ -1,9 +1,9 @@
-package com.pluralsight.gui;
+package com.pluralsight.console_gui;
 
 import com.pluralsight.entity.Order;
 import com.pluralsight.service.Command;
 import com.pluralsight.service.commands.*;
-import com.pluralsight.utils.Menu;
+import com.pluralsight.utils.ConstantValue;
 import com.pluralsight.utils.Utility;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -14,13 +14,11 @@ import org.apache.logging.log4j.Logger;
 public class OrderScreen {
     private static OrderScreen orderScreen;
     private static final Logger logger = LogManager.getLogger(OrderScreen.class);
-    private Order order;
 
     /**
      * Private constructor to prevent instantiation.
      */
     private OrderScreen() {
-        order = new Order();
     }
 
     /**
@@ -36,30 +34,41 @@ public class OrderScreen {
     }
 
     /**
+     *  create an order object
+     * @return new order
+     */
+    private Order newOrder() {
+        return  new Order();
+    }
+
+    /**
      * Displays the order screen, showing the menu and handling user input.
      */
     public void displayOrderScreen() {
         boolean runningApplication = true;
+        Order order = newOrder();
         while (runningApplication) {
-            Utility.print.accept(Menu.ORDER_MENU);
-            String optionInput = Utility.getInputAsStringWithPrompt("Choose an option:");
-
+            Utility.pauseAnimation(2);
+            Utility.print.accept(ConstantValue.ORDER_MENU);
+            String optionInput = Utility.getInputAndReturnStringWithPrompt("->");
             try {
                 int option = Integer.parseInt(optionInput);
-
                 switch (option) {
-                    case 1 -> processOrderOption(new AddSandwich(order));
+                    case 1 -> processOrderOption(new AddChipsCommand(order));
                     case 2 -> processOrderOption(new AddDrinkCommand(order));
-                    case 3 -> processOrderOption(new AddChipsCommand(order));
+                    case 3 -> processOrderOption(new AddSandwichCommand(order));
                     case 4 -> processOrderOption(new CheckoutCommand(order));
                     case 0 -> {
-                        processOrderOption(new CancelOrder(order));
+                        processOrderOption(new CancelOrderCommand(order));
                         runningApplication = false;
+
                     }
-                    default -> System.out.println("Invalid option. Please try again.");
+                    default -> {
+                        logger.error("Invalid option. Please try again.");
+                    }
                 }
             } catch (NumberFormatException e) {
-                System.out.println("Please enter a valid number.");
+                logger.error("Please enter a valid number.{}", optionInput);
             }
         }
     }
@@ -70,6 +79,8 @@ public class OrderScreen {
      * @param command the command to be executed
      */
     private void processOrderOption(Command command) {
+        Utility.loadingAnimation(3);
+        logger.info("Executing command: {}", command.getClass());
         command.execute();
     }
 }
