@@ -1,10 +1,9 @@
 package com.pluralsight.service.commands;
 
-import com.pluralsight.entity.Food;
 import com.pluralsight.entity.Order;
 import com.pluralsight.entity.otherfood.ChipBrand;
 import com.pluralsight.entity.otherfood.Chips;
-import com.pluralsight.entity.sandwich.types.Size;
+import com.pluralsight.entity.sandwich.Size;
 import com.pluralsight.service.Command;
 import com.pluralsight.utils.ConstantValue;
 import com.pluralsight.utils.Utility;
@@ -39,7 +38,7 @@ public class AddChipsCommand implements Command {
         while (chipBrand == null) {
             try {
                 Utility.print.accept(ConstantValue.CHIPS_MENU);
-                int option = Utility.getInputAsIntegerWithPrompt("->");
+                int option = Utility.getInputAndReturnIntegerWithPrompt("->");
                 chipBrand = ChipBrand.getByMenuOption(option);
             } catch (IllegalArgumentException e) {
                 logger.error("Error fetching chip brand: ", e);
@@ -57,7 +56,7 @@ public class AddChipsCommand implements Command {
     @Override
     public void execute() {
         order.getCart().add(chips);
-        String message = String.format("\nChips added to your order (Order Number: %d)\nName: %s\nPrice: $%.2f\nCalories: %.2f",
+        String message = String.format("Chips added to your order (Order Number: %d)\nName: %s\nPrice: $%.2f\nCalories: %.2f",
                 order.getOrderNumber(), chips.getName(), chips.getPrice(), chips.getCalories());
         logger.info(message);
     }

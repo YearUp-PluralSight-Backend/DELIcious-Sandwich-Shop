@@ -3,14 +3,12 @@ package com.pluralsight.service.commands;
 import com.pluralsight.entity.Order;
 import com.pluralsight.entity.otherfood.Drink;
 import com.pluralsight.entity.otherfood.DrinkType;
-import com.pluralsight.entity.sandwich.types.Size;
+import com.pluralsight.entity.sandwich.Size;
 import com.pluralsight.service.Command;
 import com.pluralsight.utils.ConstantValue;
 import com.pluralsight.utils.Utility;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import java.util.Arrays;
 
 /**
  * Command to add a drink to an order.
@@ -20,7 +18,6 @@ public class AddDrinkCommand implements Command {
     private final Logger logger = LogManager.getLogger(AddDrinkCommand.class);
     private final Order order;
     private final Drink drink;
-    private String drinkSize;
 
     /**
      * Constructor to create an AddDrinkCommand.
@@ -39,7 +36,7 @@ public class AddDrinkCommand implements Command {
     @Override
     public void execute() {
         order.getCart().add(drink);
-        String message = String.format("\nChips added to your order (Order Number: %d)\nName: %s\nPrice: $%.2f\nCalories: %.2f",
+        String message = String.format("Chips added to your order (Order Number: %d)\nName: %s\nPrice: $%.2f\nCalories: %.2f",
                 order.getOrderNumber(), drink.getName(), drink.getPrice(), drink.getCalories());
         logger.info(message);
     }
@@ -73,7 +70,7 @@ public class AddDrinkCommand implements Command {
         while (drinkBrand == null) {
             Utility.print.accept(ConstantValue.DRINK_MENU);
             try {
-                int option = Utility.getInputAsIntegerWithPrompt("->");
+                int option = Utility.getInputAndReturnIntegerWithPrompt("->");
                 drinkBrand = DrinkType.getByMenuOption(option);
 
             } catch (IllegalArgumentException e) {
@@ -91,12 +88,11 @@ public class AddDrinkCommand implements Command {
     private Size selectAndValidateSize() {
         Size size = null;
         while (size == null) {
-            this.drinkSize = Utility.getInputAsStringWithPrompt("Enter the drink size (SMALL, MEDIUM, LARGE): ").toUpperCase();
-
-            if (validSize()) {
-                size = Size.valueOf(this.drinkSize);
+            String drinkSize = Utility.getInputAndReturnStringWithPrompt("Enter the drink size (SMALL, MEDIUM, LARGE): ").toUpperCase();
+            if (Utility.validSize(drinkSize)) {
+                size = Size.valueOf(drinkSize);
             } else {
-                logger.error("Invalid drink size provided: {}", this.drinkSize);
+                logger.error("Invalid drink size provided: {}", drinkSize);
             }
         }
         return size;
@@ -114,7 +110,7 @@ public class AddDrinkCommand implements Command {
 
         switch (size) {
             case SMALL -> {
-                drink.setCalories(150);
+                drink.setCalories(100);
                 drink.setPrice(2.0);
             }
             case MEDIUM -> {
@@ -129,15 +125,4 @@ public class AddDrinkCommand implements Command {
         }
     }
 
-    /**
-     * Checks if the entered drink size is valid.
-     *
-     * @return true if the size is valid, false otherwise
-     */
-    private boolean validSize() {
-        // Check if the drinkSize matches a valid size (SMALL, MEDIUM, LARGE)
-        return Arrays.stream(Size.values())
-                .map(Size::name)
-                .anyMatch(name -> this.drinkSize.equalsIgnoreCase(name));
-    }
 }
