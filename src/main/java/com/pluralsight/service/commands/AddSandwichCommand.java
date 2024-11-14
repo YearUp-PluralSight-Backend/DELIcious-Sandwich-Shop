@@ -47,7 +47,7 @@ public class AddSandwichCommand implements Command {
         }
 
         if (sandwich != null) {
-            logger.info("Your sandwich has been added to the cart! {}", sandwich);
+            logger.info("Your sandwich has been added to the cart! {}", sandwich.getName());
         }
     }
 
@@ -139,7 +139,6 @@ public class AddSandwichCommand implements Command {
         this.sandwich = builder.build();
         sandwich.setName("Custom Sandwich");
         order.getCart().add(sandwich);
-        logger.info("Custom sandwich added to order: {}", sandwich);
     }
 
     private void makePresetSandwich(String name, int size, boolean toasted, String... ingredients) throws InvalidIngredientException {
@@ -162,7 +161,6 @@ public class AddSandwichCommand implements Command {
         this.sandwich = builder.build();
         sandwich.setName(name);
         order.getCart().add(sandwich);
-        logger.info("You have added {} to your cart.", sandwich.getName());
     }
 
     private int chooseSize() {

@@ -1,5 +1,6 @@
 package com.pluralsight.service.commands;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.pluralsight.entity.Order;
 import com.pluralsight.repository.GenerateReceipt;
 import com.pluralsight.service.Command;
@@ -28,19 +29,21 @@ public class CheckoutCommand implements Command {
      */
     @Override
     public void execute() {
-        if (order != null) {
-            logger.info("Total price is {}", order.calculateTotalPrice());
-            logger.info("Total calories is {}", order.getTotalCalories());
-            boolean successful = GenerateReceipt.writeReceiptToFile(order);
-            GenerateReceipt.printReceiptToConsole(order);
-            if (successful) {
-                logger.info("Receipt written to file successfully.");
+        try {
+            if (order != null) {
+                logger.info("Total price is {}", order.calculateTotalPrice());
+                logger.info("Total calories is {}", order.getTotalCalories());
+                GenerateReceipt.printReceiptToConsole(order);
+//                boolean successful = GenerateReceipt.writeReceiptToFile(order);
+//                if (successful) logger.info("Receipt written to file successfully.");
+//                else logger.error("Failed to write receipt to file.");
+
             } else {
-                logger.error("Failed to write receipt to file.");
+                logger.warn("Order is null, cannot proceed with checkout.");
             }
-        } else {
-            logger.warn("Order is null, cannot proceed with checkout.");
+            logger.info("Order checked out successfully.");
+        } catch (JsonProcessingException e) {
+            logger.warn("Unable to print out the receipt ", e);
         }
-        logger.info("Order checked out successfully.");
     }
 }

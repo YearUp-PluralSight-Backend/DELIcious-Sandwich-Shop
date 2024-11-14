@@ -17,7 +17,7 @@ public class CancelOrderCommand implements Command {
      */
     public CancelOrderCommand(Order order) {
         this.order = order;
-        logger.info("Order is initialized for cancellation: {}", order);
+        logger.info("Order is initialized for cancellation: {}", order.getOrderNumber());
     }
 
     /**
