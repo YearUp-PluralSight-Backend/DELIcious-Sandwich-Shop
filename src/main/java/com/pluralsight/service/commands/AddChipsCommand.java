@@ -26,18 +26,17 @@ public class AddChipsCommand implements Command {
      */
     public AddChipsCommand(Order order) {
         this.order = order;
-        initializedChipsAttributes();
-
+        initializeChipsAttributes();
     }
 
     /**
      * Initializes the attributes of the chips.
      */
-    private void initializedChipsAttributes() {
+    private void initializeChipsAttributes() {
         ChipBrand chipBrand = null;
         while (chipBrand == null) {
+            Utility.print.accept(ConstantValue.CHIPS_MENU);
             try {
-                Utility.print.accept(ConstantValue.CHIPS_MENU);
                 int option = Utility.getInputAndReturnIntegerWithPrompt("->");
                 chipBrand = ChipBrand.getByMenuOption(option);
             } catch (IllegalArgumentException e) {
@@ -56,8 +55,7 @@ public class AddChipsCommand implements Command {
     @Override
     public void execute() {
         order.getCart().add(chips);
-        String message = String.format("Chips added to your order (Order Number: %d)\nName: %s\nPrice: $%.2f\nCalories: %.2f",
+        logger.info("Chips added to your order (Order Number: {})\nName: {}\nPrice: ${}\nCalories: {}",
                 order.getOrderNumber(), chips.getName(), chips.getPrice(), chips.getCalories());
-        logger.info(message);
     }
 }

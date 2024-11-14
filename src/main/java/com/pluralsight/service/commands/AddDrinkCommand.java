@@ -36,28 +36,17 @@ public class AddDrinkCommand implements Command {
     @Override
     public void execute() {
         order.getCart().add(drink);
-        String message = String.format("Chips added to your order (Order Number: %d)\nName: %s\nPrice: $%.2f\nCalories: %.2f",
+        logger.info("Drink added to your order (Order Number: {})\nName: {}\nPrice: ${}\nCalories: {}",
                 order.getOrderNumber(), drink.getName(), drink.getPrice(), drink.getCalories());
-        logger.info(message);
     }
 
     /**
      * Initializes the attributes of the drink including its name, size, price, and calories.
      */
     private void initializeDrink() {
-        try {
-            // Select drink brand from the menu
-            DrinkType drinkBrand = selectDrinkBrand();
-
-            // Select and validate drink size
-            Size size = selectAndValidateSize();
-
-            // Set drink attributes
-            setDrinkAttributes(drinkBrand, size);
-
-        } catch (IllegalArgumentException e) {
-            logger.error("Error initializing drink: ", e);
-        }
+        DrinkType drinkBrand = selectDrinkBrand();
+        Size size = selectAndValidateSize();
+        setDrinkAttributes(drinkBrand, size);
     }
 
     /**
@@ -72,7 +61,6 @@ public class AddDrinkCommand implements Command {
             try {
                 int option = Utility.getInputAndReturnIntegerWithPrompt("->");
                 drinkBrand = DrinkType.getByMenuOption(option);
-
             } catch (IllegalArgumentException e) {
                 logger.error("Error fetching drink brand: ", e);
             }
@@ -124,5 +112,4 @@ public class AddDrinkCommand implements Command {
             default -> logger.error("Unexpected size encountered: {}", size);
         }
     }
-
 }

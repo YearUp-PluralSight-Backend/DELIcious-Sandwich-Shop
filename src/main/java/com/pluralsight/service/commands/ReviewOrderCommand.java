@@ -9,6 +9,7 @@ public class ReviewOrderCommand implements Command {
 
     private final Logger logger = LogManager.getLogger(ReviewOrderCommand.class);
     private final Order order;
+
     public ReviewOrderCommand(Order order) {
         this.order = order;
     }
@@ -18,6 +19,10 @@ public class ReviewOrderCommand implements Command {
      */
     @Override
     public void execute() {
-        order.reviewCart();
+        if (order != null) {
+            order.reviewCart();
+        } else {
+            logger.warn("Order is null, cannot review cart.");
+        }
     }
 }
