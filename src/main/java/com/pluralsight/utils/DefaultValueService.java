@@ -1,7 +1,7 @@
 package com.pluralsight.utils;
 
 
-import com.pluralsight.entity.sandwich.toppings.Size;
+import com.pluralsight.entity.sandwich.Size;
 import com.pluralsight.exceptions.InvalidIngredientException;
 
 public class DefaultValueService {

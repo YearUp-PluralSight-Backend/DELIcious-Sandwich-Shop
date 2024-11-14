@@ -1,6 +1,6 @@
 package com.pluralsight.utils;
 
-import com.pluralsight.entity.sandwich.toppings.Size;
+import com.pluralsight.entity.sandwich.Size;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
