@@ -3,7 +3,7 @@
 </div>
 
 <div style="align-content: center">
-  <h2>A Java-based Application for Custom Sandwich Orders</h2>
+  <h2>Capstone Two Project</h2>
 </div>
 
 <div style="align-content: center">
@@ -19,8 +19,6 @@ and process orders with detailed receipts.
 <div style="align-content: center">
   <h3>Features:</h3>
 </div>
-
-
 
 - **Sandwich Customization:** Users can choose from various types of bread, meats, cheeses, vegetables, and sauces to
   create a personalized sandwich.
