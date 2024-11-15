@@ -65,9 +65,9 @@ and process orders with detailed receipts.
   ```java
   private static void appendIngredientDetails(StringBuilder stringBuilder, String prefix, String name, double price, double calories) {
     stringBuilder.append("║  ").append(prefix)
-            .append(String.format("%-20s", name)) // Align name within 20 characters
-            .append(String.format("%.2f", price)) // Format price to 2 decimal places
-            .append("\t\t").append(String.format("%.1f", calories)) // Format calories to 1 decimal place
+            .append(String.format("%-20s", name)) 
+            .append(String.format("%.2f", price)) 
+            .append("\t\t").append(String.format("%.1f", calories)) 
             .append("\n");
 }
   ```
