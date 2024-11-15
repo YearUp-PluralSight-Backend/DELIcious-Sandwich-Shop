@@ -201,7 +201,7 @@ public class Sandwich extends Food implements Purchasable {
                 .append("Sandwich Name: ").append(this.getName()).append("\n")
                 .append("Size: ").append(this.getSize()).append("\t\t\t").append("Toast: ").append(this.isToast).append("\n")
                 .append("===================================================\n")
-                .append(String.format("\t%-20s %-10s\t\t%s\n", "Ingredient", "Price", "Calories"));
+                .append(String.format("\t%-19s %-10s\t%s\n", "Ingredient", "Price", "Calories"));
 
         if (breadType != null) {
             stringBuilder.append(String.format("   -%-20s %.2f\t\t%.1f\n",

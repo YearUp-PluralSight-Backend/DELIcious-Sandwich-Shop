@@ -187,6 +187,7 @@ public class ConstantValue {
                     ║ 4. ROAST BEEF      | $1.00, 130 cal   | $2.00, 180 cal    | $3.00, 230 cal  ║
                     ║ 5. CHICKEN         | $1.00, 80 cal    | $2.00, 130 cal    | $3.00, 180 cal  ║
                     ║ 6. BACON           | $1.00, 100 cal   | $2.00, 150 cal    | $3.00, 200 cal  ║
+                    ║ 7. EXTRA_MEAT      | $0.50, 50 cal    | $1.00, 100 cal    | $1.50, 150 cal  ║
                     ╚═════════════════════════════════════════════════════════════════════════════╝
                     """;
 
@@ -204,6 +205,7 @@ public class ConstantValue {
                     ║ 2. PROVOLONE       | $0.75, 60 cal    | $1.50, 110 cal    | $2.25, 160 cal  ║
                     ║ 3. CHEDDAR         | $0.75, 70 cal    | $1.50, 120 cal    | $2.25, 170 cal  ║
                     ║ 4. SWISS           | $0.75, 80 cal    | $1.50, 130 cal    | $2.25, 180 cal  ║
+                    ║ 5. EXTRA_CHEESE    | $0.30, 20 cal    | $0.60, 40 cal    | $0.90, 60 cal    ║
                     ╚═════════════════════════════════════════════════════════════════════════════╝
                     """;
 
@@ -260,27 +262,27 @@ public class ConstantValue {
                     ║-----------------------------------------------------------------------------║
                     ║ 1. Customized Sandwich           |    ?         |    ?                      ║
                     ╠═════════════════════════════════════════════════════════════════════════════╣
-                    ║ 2.  BLT                          |    $7.49     |    500 cal                ║
+                    ║ 2.  BLT                          |    $10.5     |    522.0 cal              ║
                     ║     - 8" white bread, crispy bacon, cheddar cheese, fresh lettuce,          ║
                     ║      ripe tomato, and creamy ranch dressing. Served toasted to perfection.  ║
                     ╠═════════════════════════════════════════════════════════════════════════════╣
-                    ║ 3. Philly Cheese Steak           |    $8.99     |    650 cal                ║
-                    ║     - Thinly sliced steak, melted provolone, grilled onions,                ║
+                    ║ 3. Philly Cheese Steak           |    $10.5     |    546.0 cal              ║
+                    ║     - 8" Thinly sliced steak, melted provolone, grilled onions,             ║
                     ║       and bell peppers on a toasted hoagie roll. A hearty classic!          ║
                     ╠═════════════════════════════════════════════════════════════════════════════╣
-                    ║ 4. Chicken Bacon Ranch Melt      |    $8.49     |    700 cal                ║
-                    ║     - Grilled chicken, crispy bacon, cheddar cheese,                        ║
+                    ║ 4. Chicken Bacon Ranch Melt      |    $16.75     |   840.0 cal              ║
+                    ║     - 12" Grilled chicken, crispy bacon, cheddar cheese,                    ║
                     ║       and creamy ranch dressing on your choice of bread. Savor every bite!  ║
                     ╠═════════════════════════════════════════════════════════════════════════════╣
-                    ║ 5. Italian Sub                   |    $7.99     |    600 cal                ║
-                    ║     - A robust blend of ham, salami, pepperoni, provolone, lettuce,         ║
+                    ║ 5. Italian Sub                   |    $19.75     |   931.0 cal              ║
+                    ║     - 12" A robust blend of ham, salami, pepperoni, provolone, lettuce,     ║
                     ║       tomatoes, and onions on an Italian sub roll with Italian dressing.    ║
                     ╠═════════════════════════════════════════════════════════════════════════════╣
-                    ║ 6.  Turkey Avocado Club          |    $8.49     |    550 cal                ║
-                    ║     -  Sliced turkey, fresh avocado, bacon, Swiss cheese, lettuce,          ║
+                    ║ 6.  Turkey Avocado Club          |    $16.75     |    819.0 cal             ║
+                    ║     - 12" Sliced turkey, fresh avocado, bacon, Swiss cheese, lettuce,       ║
                     ║        and tomato with a hint of mayo on multigrain bread.                  ║
                     ╠═════════════════════════════════════════════════════════════════════════════╣
-                    ║ 7.  Veggie Delight               |    $6.99      |    450 cal               ║
+                    ║ 7.  Veggie Delight               |    $8.5      |    378.0 cal              ║
                     ║     - A fresh assortment of lettuce, cucumbers, tomatoes, peppers, onions,  ║
                     ║       and avocado with your choice of cheese and dressing on wheat bread.   ║
                     ╠═════════════════════════════════════════════════════════════════════════════╣

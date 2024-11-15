@@ -34,6 +34,7 @@ public class CancelOrderCommand implements Command {
             order = null;
             Utility.println.accept("Order has been canceled.");
             logger.info("Order has been canceled.");
+            Utility.println.accept("Back to the main menu.");
         } else {
             logger.warn("No order to cancel.");
         }

@@ -2,6 +2,8 @@ package com.pluralsight.entity.sandwich;
 
 import lombok.Getter;
 
+import java.util.Arrays;
+
 /**
  * Enum representing different sizes of a sandwich.
  */
@@ -32,5 +34,18 @@ public enum Size {
      */
     Size(int value) {
         this.value = value;
+    }
+
+    /**
+     * Checks if the entered drink size is valid.
+     *
+     * @param size the size to check
+     * @return true if the size is valid, false otherwise
+     */
+    public static boolean validSize(String size) {
+        // Check if the drinkSize matches a valid size (SMALL, MEDIUM, LARGE)
+        return Arrays.stream(Size.values())
+                .map(Size::name)
+                .anyMatch(size::equalsIgnoreCase);
     }
 }

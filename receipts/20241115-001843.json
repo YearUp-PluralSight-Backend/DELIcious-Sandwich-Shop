@@ -1,0 +1,213 @@
+{
+  "orderNumber": 148669,
+  "shop": {
+    "shopName": "Year Up United",
+    "shopAddress": {
+      "street": "85 Broad Street, 6th Floor",
+      "city": "New York",
+      "state": "NY",
+      "zipCode": "10004"
+    },
+    "phoneNumber": "(212) 785-3340",
+    "staffName": "Harry"
+  },
+  "createTime": [
+    2024,
+    11,
+    15,
+    0,
+    16,
+    7
+  ],
+  "totalPrice": 52.25,
+  "totalCalories": 2684.0,
+  "cart": [
+    {
+      "name": "Lays",
+      "size": "SMALL",
+      "price": 1.5,
+      "calories": 130.0
+    },
+    {
+      "name": "Coca-Cola",
+      "size": "SMALL",
+      "price": 2.0,
+      "calories": 100.0
+    },
+    {
+      "name": "BLT",
+      "size": "MEDIUM",
+      "price": 10.5,
+      "calories": 522.0,
+      "breadType": {
+        "name": "WHITE",
+        "price": 7.0,
+        "calories": 240.0
+      },
+      "ingredients": [
+        {
+          "name": "BACON",
+          "price": 2.0,
+          "calories": 120.0
+        },
+        {
+          "name": "CHEDDAR",
+          "price": 1.5,
+          "calories": 84.0
+        },
+        {
+          "name": "LETTUCE",
+          "price": 0.0,
+          "calories": 6.0
+        },
+        {
+          "name": "TOMATOES",
+          "price": 0.0,
+          "calories": 12.0
+        },
+        {
+          "name": "RANCH",
+          "price": 0.0,
+          "calories": 60.0
+        }
+      ],
+      "toast": true
+    },
+    {
+      "name": "Chicken Bacon Ranch Melt",
+      "size": "LARGE",
+      "price": 16.75,
+      "calories": 840.0,
+      "breadType": {
+        "name": "WHEAT",
+        "price": 8.5,
+        "calories": 420.0
+      },
+      "ingredients": [
+        {
+          "name": "CHICKEN",
+          "price": 3.0,
+          "calories": 112.0
+        },
+        {
+          "name": "BACON",
+          "price": 3.0,
+          "calories": 140.0
+        },
+        {
+          "name": "CHEDDAR",
+          "price": 2.25,
+          "calories": 98.0
+        },
+        {
+          "name": "RANCH",
+          "price": 0.0,
+          "calories": 70.0
+        }
+      ],
+      "toast": true
+    },
+    {
+      "name": "Veggie Delight",
+      "size": "LARGE",
+      "price": 8.5,
+      "calories": 378.0,
+      "breadType": {
+        "name": "RYE",
+        "price": 8.5,
+        "calories": 280.0
+      },
+      "ingredients": [
+        {
+          "name": "LETTUCE",
+          "price": 0.0,
+          "calories": 7.0
+        },
+        {
+          "name": "TOMATOES",
+          "price": 0.0,
+          "calories": 14.0
+        },
+        {
+          "name": "CUCUMBERS",
+          "price": 0.0,
+          "calories": 7.0
+        },
+        {
+          "name": "PEPPERS",
+          "price": 0.0,
+          "calories": 14.0
+        },
+        {
+          "name": "ONIONS",
+          "price": 0.0,
+          "calories": 21.0
+        },
+        {
+          "name": "VINAIGRETTE",
+          "price": 0.0,
+          "calories": 35.0
+        }
+      ],
+      "toast": false
+    },
+    {
+      "name": "Custom Sandwich",
+      "size": "MEDIUM",
+      "price": 13.0,
+      "calories": 714.0,
+      "breadType": {
+        "name": "WHITE",
+        "price": 7.0,
+        "calories": 240.0
+      },
+      "ingredients": [
+        {
+          "name": "STEAK",
+          "price": 2.0,
+          "calories": 144.0
+        },
+        {
+          "name": "EXTRA_MEAT",
+          "price": 1.0,
+          "calories": 60.0
+        },
+        {
+          "name": "STEAK",
+          "price": 2.0,
+          "calories": 144.0
+        },
+        {
+          "name": "EXTRA_MEAT",
+          "price": 1.0,
+          "calories": 60.0
+        },
+        {
+          "name": "LETTUCE",
+          "price": 0.0,
+          "calories": 6.0
+        },
+        {
+          "name": "JALAPENOS",
+          "price": 0.0,
+          "calories": 6.0
+        },
+        {
+          "name": "MAYO",
+          "price": 0.0,
+          "calories": 48.0
+        },
+        {
+          "name": "JALAPENOS",
+          "price": 0.0,
+          "calories": 6.0
+        }
+      ],
+      "toast": true
+    }
+  ],
+  "numberOfItems": 6,
+  "numberOfSandwiches": 4,
+  "numberOfChips": 1,
+  "numberOfDrinks": 1
+}

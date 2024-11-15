@@ -33,7 +33,6 @@ public class AddSandwichCommand implements Command {
     private void run() {
         boolean runningApplication = true;
         while (runningApplication) {
-            Utility.pauseAnimation(2);
             Utility.print.accept(ConstantValue.SANDWICH_MENU);
             int optionInput = Utility.getInputAndReturnIntegerWithPrompt("->");
 
@@ -48,6 +47,7 @@ public class AddSandwichCommand implements Command {
                     case 7 -> makePresetSandwich("Veggie Delight", 12, false, "RYE", "LETTUCE", "TOMATOES", "CUCUMBERS", "PEPPERS", "ONIONS", "VINAIGRETTE");
                     case 0 -> {
                         logger.info("Exiting the menu...");
+                        Utility.pauseAnimation(1);
                         runningApplication = false;
                     }
                     default -> logger.error("Invalid option. Please try again.");
@@ -101,6 +101,7 @@ public class AddSandwichCommand implements Command {
                 }
                 case 2 -> {
                     boolean validMeat = false;
+                    boolean meatAdded = false;
                     while (!validMeat) {
                         try {
                             Utility.print.accept(ConstantValue.MEAT_MENU);
@@ -115,6 +116,14 @@ public class AddSandwichCommand implements Command {
                                 default -> throw new InvalidIngredientException("Invalid meat choice: " + ingredient);
                             });
                             validMeat = true;
+                            meatAdded = true;
+                            if (meatAdded) {
+                                boolean addExtraMeat = Utility.getInputAndReturnBooleanWithPrompt("Would you like to add extra meat?");
+                                if (addExtraMeat) {
+                                    builder.addMeat("EXTRA_MEAT");
+                                }
+                            }
+
                         } catch (InvalidIngredientException e) {
                             Utility.println.accept("Invalid meat choice. Please try again.");
                             logger.warn("Invalid meat choice. Please try again.");
@@ -123,6 +132,7 @@ public class AddSandwichCommand implements Command {
                 }
                 case 3 -> {
                     boolean validCheese = false;
+                    boolean cheeseAdded = false;
                     while (!validCheese) {
                         try {
                             Utility.print.accept(ConstantValue.CHEESE_MENU);
@@ -135,6 +145,15 @@ public class AddSandwichCommand implements Command {
                                 default -> throw new InvalidIngredientException("Invalid cheese choice: " + ingredient);
                             });
                             validCheese = true;
+                            cheeseAdded = true;
+
+                            if (cheeseAdded) {
+                                boolean addExtraCheese = Utility.getInputAndReturnBooleanWithPrompt("Would you like to add extra cheese?");
+                                if (addExtraCheese) {
+                                    builder.addCheese("EXTRA_CHEESE");
+                                }
+                            }
+
                         } catch (InvalidIngredientException e) {
                             Utility.println.accept("Invalid cheese choice. Please try again.");
                             logger.warn("Invalid cheese choice. Please try again.");
@@ -198,8 +217,9 @@ public class AddSandwichCommand implements Command {
         sandwich.setName("Custom Sandwich");
         logger.info("Your sandwich has been added to the cart! {}", sandwich.getName());
         order.getCart().add(sandwich);
-        Utility.println.accept("Your sandwich has been added to the cart!");
+        Utility.println.accept("Your " + sandwich.getName()  + " has been added to the cart!");
         Utility.println.accept(sandwich.toString());
+        Utility.pauseAnimation(2);
 
     }
 
@@ -233,8 +253,10 @@ public class AddSandwichCommand implements Command {
         sandwich.setName(name);
         order.getCart().add(sandwich);
         logger.info("Your sandwich has been added to the cart! {}", sandwich.getName());
-        Utility.println.accept("Your sandwich has been added to the cart!");
+        Utility.println.accept("Your " + sandwich.getName()  + " has been added to the cart!");
         Utility.println.accept(sandwich.toString());
+        Utility.pauseAnimation(2);
+
     }
 
     /**

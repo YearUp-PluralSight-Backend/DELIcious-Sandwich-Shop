@@ -45,7 +45,7 @@ public class HomeScreen {
                 switch (option) {
                     case "1" /* new order */ -> {
                         orderScreen.displayOrderScreen();
-                        Utility.loadingAnimation(3);
+                        Utility.randomLoadingAnimation(3);
                     }
                     case "2" /* exit */ -> runningHomeScreen = false;
                     default -> {

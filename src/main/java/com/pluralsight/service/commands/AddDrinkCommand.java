@@ -81,11 +81,17 @@ public class AddDrinkCommand implements Command {
     private Size selectAndValidateSize() {
         Size size = null;
         while (size == null) {
-            String drinkSize = Utility.getInputAndReturnStringWithPrompt("Enter the drink size (SMALL, MEDIUM, LARGE): ").toUpperCase();
-            if (Utility.validSize(drinkSize)) {
-                size = Size.valueOf(drinkSize);
-            } else {
-                logger.error("Invalid drink size provided: {}", drinkSize);
+            try {
+                String drinkSize = Utility.getInputAndReturnStringWithPrompt("Enter the drink size (SMALL, MEDIUM, LARGE): ").toUpperCase();
+                if (Size.validSize(drinkSize)) {
+                    size = Size.valueOf(drinkSize);
+                } else {
+                    Utility.println.accept("Invalid size. Please try again.");
+                    logger.error("Invalid drink size provided: {}", drinkSize);
+                }
+            } catch (IllegalArgumentException e) {
+                Utility.println.accept("Invalid size. Please try again.");
+                logger.error("Error fetching drink size: ", e);
             }
         }
         return size;

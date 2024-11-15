@@ -4,13 +4,12 @@ import com.pluralsight.entity.Order;
 import com.pluralsight.entity.otherfood.Chips;
 import com.pluralsight.entity.otherfood.Drink;
 import com.pluralsight.entity.sandwich.Sandwich;
-import com.pluralsight.entity.sandwich.Size;
 import com.pluralsight.entity.sandwich.toppings.SandwichIngredient;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.Arrays;
 import java.util.Locale;
+import java.util.Random;
 import java.util.Scanner;
 import java.util.function.Consumer;
 
@@ -121,28 +120,17 @@ public class Utility {
      * @return the user input as a boolean
      */
     public static boolean getInputAndReturnBooleanWithPrompt(String prompt) {
-        String option = getInputAndReturnStringWithPrompt(prompt).toUpperCase().trim();
-        if (option.equalsIgnoreCase("Yes") || option.equalsIgnoreCase("Y")) {
-            return true;
-        } else if (option.equalsIgnoreCase("No") || option.equalsIgnoreCase("N")) {
-            return false;
-        } else {
-            logger.error("Wrong input!");
+        while (true) {
+            String option = getInputAndReturnStringWithPrompt(prompt).toUpperCase().trim();
+            if (option.equalsIgnoreCase("Yes") || option.equalsIgnoreCase("Y")) {
+                return true;
+            } else if (option.equalsIgnoreCase("No") || option.equalsIgnoreCase("N")) {
+                return false;
+            } else {
+                Utility.println.accept("Invalid input! Please enter 'Yes' or 'No'.");
+                logger.error("Wrong input!");
+            }
         }
-        return false;
-    }
-
-    /**
-     * Checks if the entered drink size is valid.
-     *
-     * @param size the size to check
-     * @return true if the size is valid, false otherwise
-     */
-    public static boolean validSize(String size) {
-        // Check if the drinkSize matches a valid size (SMALL, MEDIUM, LARGE)
-        return Arrays.stream(Size.values())
-                .map(Size::name)
-                .anyMatch(size::equalsIgnoreCase);
     }
 
     /**
@@ -152,16 +140,29 @@ public class Utility {
      * @return the formatted header
      */
     public static String headerFormat(Order order) {
-        return new StringBuffer().append("║  Year Up Sandwich Shop\t\t\n")
-                .append("║  ").append(order.getShop().getShopAddress().getStreet()).append("\t\t\n")
-                .append("║  ").append(order.getShop().getShopAddress().getCity()).append(", ")
-                .append(order.getShop().getShopAddress().getState()).append(", ")
-                .append(order.getShop().getShopAddress().getZipCode()).append("\t\t\n")
-                .append("║  ").append(order.getShop().getPhoneNumber()).append("\t\t\n")
-                .append("║  Order Number: ").append(order.getOrderNumber()).append("\t\t\n")
-                .append("║  \n").toString();
+        return new StringBuffer()
+                .append("║").append("║═══║".repeat(12)).append("║").append("\n\n")
+                .append("║  \t\t\tYear Up Sandwich Shop\t\t\n")
+                .append("║  \t\t\t").append(order.getShop().getShopAddress().getStreet()).append("\t\t\n")
+                .append("║  \t\t\t").append(order.getShop().getShopAddress().getCity()).append(", ").append(order.getShop().getShopAddress().getState()).append(", ").append(order.getShop().getShopAddress().getZipCode()).append("\t\t\n")
+                .append("║  \t\t\t").append(order.getShop().getPhoneNumber()).append("\t\t\n")
+                .append("║  \t\t\tOrder Number: ").append(order.getOrderNumber()).append("\t\t\n")
+                .append("║  \t\t\t\n").toString();
     }
 
+
+    /**
+     * Formats the footer for the order receipt.
+     *
+     * @return the formatted footer
+     */
+    public static String footerFormat() {
+        return new StringBuffer().append("║  Thank you for choosing Year Up Sandwich Shop!\n")
+                .append("║  ").append("═══".repeat(20)).append("\n")
+                .append("║  ").append("© 2024 Year Up IP LLC®\n")
+                .append("║  ").append("Developed by Yiming Gao\n")
+                .append("║").append("║═══║".repeat(12)).append("║").append("\n").toString();
+    }
     /**
      * Formats the receipt for the order.
      *
@@ -170,12 +171,12 @@ public class Utility {
      */
     public static String reviewOrder(Order order) {
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("═══".repeat(20)).append("\n")
-                .append("║  Order Summary\n")
-                .append("║  ").append(order.getShop().getStaffName()).append("\t\t\t\t\t\t")
-                .append(order.getCreateTime().toLocalDate()).append("\t\t\t\t").append(order.getCreateTime().toLocalTime()).append("\n")
+        stringBuilder.append("║  ").append("═══".repeat(20)).append("\n")
+                .append("║  \t\t\tOrder Summary\n")
+                .append("║  ").append(order.getShop().getStaffName()).append("\t\t\t\t\t")
+                .append(order.getCreateTime().toLocalDate()).append("\t\t\t").append(order.getCreateTime().toLocalTime()).append("\n")
                 .append("║  ").append("═══".repeat(20)).append("\n")
-                .append(String.format("\t%-20s %-10s\t\t%s\n", "Ingredient", "Price", "Calories"))
+                .append(String.format("║  \t%-22s %-10s\t\t%s\n", "Ingredient", "Price", "Calories"))
                 .append("║  ").append("═══".repeat(20)).append("\n");
 
         // Loop through the cart to print items
@@ -187,29 +188,31 @@ public class Utility {
                         .append(" - ").append(sandwich.getSize()).append("\n");
 
                 // Bread details
-                appendIngredientDetails(stringBuilder, "   -", sandwich.getBreadType().getName(),
+                appendSandwichDetails(stringBuilder, "   -", sandwich.getBreadType().getName(),
                         sandwich.getBreadType().getPrice(), sandwich.getBreadType().getCalories());
 
                 // Ingredients details
                 for (SandwichIngredient ingredient : sandwich.getIngredients()) {
-                    appendIngredientDetails(stringBuilder, "   -", ingredient.getName(), ingredient.getPrice(), ingredient.getCalories());
+                    appendSandwichDetails(stringBuilder, "   -", ingredient.getName(), ingredient.getPrice(), ingredient.getCalories());
                 }
 
             } else if (item instanceof Drink) {
                 Drink drink = (Drink) item;
-                stringBuilder.append("║  ").append(i).append(") ").append(drink.getName())
-                        .append("\t\t\t").append(String.format("%.2f", drink.getPrice()))
-                        .append("\t\t\t").append(drink.getCalories()).append("\n");
+                appendChipAndDrinksDetails(stringBuilder, i +")", drink.getName(), drink.getPrice(), drink.getCalories());
+
 
             } else if (item instanceof Chips) {
                 Chips chips = (Chips) item;
-                stringBuilder.append("║  ").append(i).append(") ").append(chips.getName())
-                        .append("\t\t").append(String.format("%.2f", chips.getPrice()))
-                        .append("\t\t").append(chips.getCalories()).append("\n");
+                appendChipAndDrinksDetails(stringBuilder,  i +")", chips.getName(), chips.getPrice(), chips.getCalories());
+
             }
         }
         // Summary (Total Cost and Calories)
         stringBuilder.append("║  ").append("═══".repeat(20)).append("\n")
+                .append("║  ").append("Total Items: ").append(order.getCart().size()).append("\n")
+                .append("║  ").append("Total Sandwiches: ").append(order.getNumberOfSandwiches()).append("\n")
+                .append("║  ").append("Total Chips: ").append(order.getNumberOfChips()).append("\n")
+                .append("║  ").append("Total Drinks: ").append(order.getNumberOfDrinks()).append("\n")
                 .append("║  ").append("Total Cost: ").append(String.format("%.2f", order.getTotalPrice())).append("\n")
                 .append("║  ").append("Total Calories: ").append(order.getTotalCalories()).append("\n")
                 .append("║  ").append("═══".repeat(20)).append("\n");
@@ -225,7 +228,7 @@ public class Utility {
      * @param price the price of the ingredient
      * @param calories the calories of the ingredient
      */
-    private static void appendIngredientDetails(StringBuilder stringBuilder, String prefix, String name, double price, double calories) {
+    private static void appendSandwichDetails(StringBuilder stringBuilder, String prefix, String name, double price, double calories) {
         stringBuilder.append("║  ").append(prefix)
                 .append(String.format("%-20s", name)) // Align name
                 .append(String.format("%.2f", price)) // Format price to 2 decimals
@@ -233,18 +236,12 @@ public class Utility {
                 .append("\n");
     }
 
-    /**
-     * Formats the footer for the order receipt.
-     *
-     * @return the formatted footer
-     */
-    public static String footerFormat() {
-        return new StringBuffer().append("║  Thank you for choosing Year Up Sandwich Shop!\n")
-                .append("║  ").append("═══".repeat(20)).append("\n")
-                .append("║  ").append("© 2024 Year Up IP LLC. Subway® is a Registered Trademark of Year Up Sandwich Shop IP LLC\n")
-                .append("║  ").append("═══".repeat(20)).append("\n")
-                .append("║  ").append("Developed by Yiming Gao\n")
-                .append("║  ").append("═══".repeat(20)).append("\n").toString();
+    private static void appendChipAndDrinksDetails(StringBuilder stringBuilder, String prefix, String name, double price, double calories) {
+        stringBuilder.append("║  ").append(prefix)
+                .append(String.format("%-22s", name)) // Align name
+                .append(String.format("%.2f", price)) // Format price to 2 decimals
+                .append("\t\t").append(String.format("%.1f", calories)) // Format calories to 1 decimal
+                .append("\n");
     }
 
     /**
@@ -262,5 +259,17 @@ public class Utility {
      */
     public static void closeScanner() {
         input.close();
+    }
+
+    public static void randomLoadingAnimation(int i) {
+        Random random = new Random();
+        int randomInt = random.nextInt(1, 20001);
+
+        if (randomInt % 2 == 0) {
+            println.accept("Internet is slow, please wait...");
+            loadingAnimation(i);
+        } else {
+            pauseAnimation(i);
+        }
     }
 }

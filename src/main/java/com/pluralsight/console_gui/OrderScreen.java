@@ -48,6 +48,7 @@ public class OrderScreen {
     public void displayOrderScreen() {
         boolean runningApplication = true;
         Order order = newOrder();
+        Utility.println.accept("New order created. Order Number(" +  order.getOrderNumber() + ")");
         while (runningApplication) {
             Utility.pauseAnimation(2);
             Utility.print.accept(ConstantValue.ORDER_MENU);
@@ -82,8 +83,9 @@ public class OrderScreen {
      * @param command the command to be executed
      */
     private void processOrderOption(Command command) {
-        Utility.loadingAnimation(3);
         logger.info("Executing command: {}", command.getClass());
         command.execute();
+        Utility.randomLoadingAnimation(2);
+
     }
 }

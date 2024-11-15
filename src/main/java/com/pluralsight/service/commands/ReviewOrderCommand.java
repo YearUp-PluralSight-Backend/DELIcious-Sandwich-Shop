@@ -20,12 +20,15 @@ public class ReviewOrderCommand implements Command {
      */
     @Override
     public void execute() {
-        if (order != null) {
-            logger.info("Reviewing order: " + order);
+        if (!order.getCart().isEmpty()) {
+            order.setTotalPrice(order.calculateTotalPrice());
+            logger.info("Reviewing order: {}", order);
             Utility.println.accept(Utility.reviewOrder(order));
 
         } else {
+            Utility.println.accept("Your cart is empty.");
             logger.warn("Order is null, cannot review cart.");
         }
+        Utility.randomLoadingAnimation(1);
     }
 }

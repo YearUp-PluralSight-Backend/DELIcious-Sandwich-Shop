@@ -1,17 +1,18 @@
+║║═══║║═══║║═══║║═══║║═══║║═══║║═══║║═══║║═══║║═══║║═══║║═══║║
+║  			Year Up Sandwich Shop		
+║  			85 Broad Street, 6th Floor		
+║  			New York, NY, 10004		
+║  			(212) 785-3340		
+║  			Order Number: 148669		
+║  			
 ║  ════════════════════════════════════════════════════════════
-║  Subway		
-║  41-35 Washington St		
-║  Seattle, Washington, 113992		
-║  123-456-7890		
-║  Order Number: 170323		
-║  
-║  Order Summary
-║  Harry						2024-11-14				22:01:05
+║  			Order Summary
+║  Harry					2024-11-15			00:16:07
 ║  ════════════════════════════════════════════════════════════
-║  	Name			Price			Calories
+║  	Ingredient             Price     		Calories
 ║  ════════════════════════════════════════════════════════════
-║  1) Lays		1.50		130.0
-║  2) Water			2.00			0.0
+║  1)Lays                  1.50		130.0
+║  2)Coca-Cola             2.00		100.0
 ║  3) BLT - MEDIUM
 ║     -WHITE               7.00		240.0
 ║     -BACON               2.00		120.0
@@ -19,39 +20,13 @@
 ║     -LETTUCE             0.00		6.0
 ║     -TOMATOES            0.00		12.0
 ║     -RANCH               0.00		60.0
-║  4) Philly Cheese Steak - MEDIUM
-║     -WHITE               7.00		240.0
-║     -STEAK               2.00		144.0
-║     -PROVOLONE           1.50		72.0
-║     -ONIONS              0.00		18.0
-║     -PEPPERS             0.00		12.0
-║     -RANCH               0.00		60.0
-║  5) Chicken Bacon Ranch Melt - LARGE
+║  4) Chicken Bacon Ranch Melt - LARGE
 ║     -WHEAT               8.50		420.0
 ║     -CHICKEN             3.00		112.0
 ║     -BACON               3.00		140.0
 ║     -CHEDDAR             2.25		98.0
 ║     -RANCH               0.00		70.0
-║  6) Italian Sub - LARGE
-║     -WRAP                8.50		350.0
-║     -SALAMI              3.00		154.0
-║     -HAM                 3.00		126.0
-║     -PEPPERONI           3.00		140.0
-║     -PROVOLONE           2.25		84.0
-║     -LETTUCE             0.00		7.0
-║     -TOMATOES            0.00		14.0
-║     -ONIONS              0.00		21.0
-║     -VINAIGRETTE         0.00		35.0
-║  7) Turkey Avocado Club - LARGE
-║     -RYE                 8.50		280.0
-║     -ROAST BEEF          3.00		182.0
-║     -BACON               3.00		140.0
-║     -SWISS               2.25		112.0
-║     -LETTUCE             0.00		7.0
-║     -TOMATOES            0.00		14.0
-║     -AVOCADO             0.00		28.0
-║     -MAYO                0.00		56.0
-║  8) Veggie Delight - LARGE
+║  5) Veggie Delight - LARGE
 ║     -RYE                 8.50		280.0
 ║     -LETTUCE             0.00		7.0
 ║     -TOMATOES            0.00		14.0
@@ -59,9 +34,26 @@
 ║     -PEPPERS             0.00		14.0
 ║     -ONIONS              0.00		21.0
 ║     -VINAIGRETTE         0.00		35.0
+║  6) Custom Sandwich - MEDIUM
+║     -WHITE               7.00		240.0
+║     -STEAK               2.00		144.0
+║     -EXTRA_MEAT          1.00		60.0
+║     -STEAK               2.00		144.0
+║     -EXTRA_MEAT          1.00		60.0
+║     -LETTUCE             0.00		6.0
+║     -JALAPENOS           0.00		6.0
+║     -MAYO                0.00		48.0
+║     -JALAPENOS           0.00		6.0
 ║  ════════════════════════════════════════════════════════════
-║  Total Cost: 86.25
-║  Total Calories: 4166.0
+║  Total Items: 6
+║  Total Sandwiches: 4
+║  Total Chips: 1
+║  Total Drinks: 1
+║  Total Cost: 52.25
+║  Total Calories: 2684.0
 ║  ════════════════════════════════════════════════════════════
-║  Thank you for choosing Subway!
+║  Thank you for choosing Year Up Sandwich Shop!
 ║  ════════════════════════════════════════════════════════════
+║  © 2024 Year Up IP LLC®
+║  Developed by Yiming Gao
+║║═══║║═══║║═══║║═══║║═══║║═══║║═══║║═══║║═══║║═══║║═══║║═══║║
