@@ -230,17 +230,17 @@ public class Utility {
      */
     private static void appendSandwichDetails(StringBuilder stringBuilder, String prefix, String name, double price, double calories) {
         stringBuilder.append("║  ").append(prefix)
-                .append(String.format("%-20s", name)) // Align name
-                .append(String.format("%.2f", price)) // Format price to 2 decimals
-                .append("\t\t").append(String.format("%.1f", calories)) // Format calories to 1 decimal
+                .append(String.format("%-20s", name))
+                .append(String.format("%.2f", price))
+                .append("\t\t").append(String.format("%.1f", calories))
                 .append("\n");
     }
 
     private static void appendChipAndDrinksDetails(StringBuilder stringBuilder, String prefix, String name, double price, double calories) {
         stringBuilder.append("║  ").append(prefix)
-                .append(String.format("%-22s", name)) // Align name
-                .append(String.format("%.2f", price)) // Format price to 2 decimals
-                .append("\t\t").append(String.format("%.1f", calories)) // Format calories to 1 decimal
+                .append(String.format("%-22s", name))
+                .append(String.format("%.2f", price))
+                .append("\t\t").append(String.format("%.1f", calories))
                 .append("\n");
     }
 
