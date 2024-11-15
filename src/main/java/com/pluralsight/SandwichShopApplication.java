@@ -1,10 +1,12 @@
 package com.pluralsight;
 
-import com.pluralsight.gui.HomeGUI;
+import com.pluralsight.console_gui.HomeScreen;
 
 public class SandwichShopApplication {
     public static void main(String[] args) {
-        HomeGUI.getInstance();
+        HomeScreen.getInstance().run();
     }
+
+
 
 }

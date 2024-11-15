@@ -36,3 +36,8 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+
+### diagram ###
+!**src/main/java/com/pluralsight/diagram/
+# for not having similar projects!

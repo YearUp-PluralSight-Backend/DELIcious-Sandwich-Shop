@@ -1,0 +1,26 @@
+===================================
+{{shopName}}
+{{shopAddress}}
+Phone: {{phoneNumber}}
+===================================
+Customer: {{customerName}}
+Customer Phone: {{customerPhone}}
+Date: {{createTime}}
+Cashier: {{cashierName}}
+
+===================================
+Items:
+{{#cart}}
+    1 x {{name}}{{#size}} ({{size}}){{/size}}  @ ${{price}}   = ${{price}}
+    {{#breadType}}
+        - Bread: {{name}}  @ ${{price}}
+    {{/breadType}}
+    {{#ingredients}}
+        - {{name}}  @ ${{price}}
+    {{/ingredients}}
+{{/cart}}
+===================================
+Total: ${{totalPrice}}
+===================================
+Thank you for dining with us!
+===================================

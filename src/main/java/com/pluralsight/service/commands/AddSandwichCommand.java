@@ -9,16 +9,27 @@ import com.pluralsight.utils.Utility;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * Command to add a sandwich to an order.
+ */
 public class AddSandwichCommand implements Command {
 
     private final Logger logger = LogManager.getLogger(AddSandwichCommand.class);
     private final Order order;
     private Sandwich sandwich;
 
+    /**
+     * Constructor for AddSandwichCommand.
+     *
+     * @param order the order to which the sandwich will be added
+     */
     public AddSandwichCommand(Order order) {
         this.order = order;
     }
 
+    /**
+     * Runs the command to add a sandwich to the order.
+     */
     private void run() {
         boolean runningApplication = true;
         while (runningApplication) {
@@ -42,105 +53,165 @@ public class AddSandwichCommand implements Command {
                     default -> logger.error("Invalid option. Please try again.");
                 }
             } catch (NumberFormatException | InvalidIngredientException e) {
+                Utility.println.accept("Please enter a valid number. (1-7, 0 to exit)");
                 logger.error("Please enter a valid number. You entered: {}", optionInput);
             }
         }
-
-        if (sandwich != null) {
-            logger.info("Your sandwich has been added to the cart! {}", sandwich.getName());
-        }
     }
 
+    /**
+     * Creates a customized sandwich based on user input.
+     *
+     * @throws InvalidIngredientException if an invalid ingredient is chosen
+     */
     private void makeCustomizedSandwich() throws InvalidIngredientException {
         Sandwich.Builder builder = new Sandwich.Builder(chooseSize(), chooseToasting());
         boolean breadAdded = false;
         boolean addMoreIngredients = true;
 
         while (addMoreIngredients) {
-            String ingredientType = Utility.getInputAndReturnStringWithPrompt("Choose ingredient type (Bread, Meat, Cheese, Vegetable, Sauce): ");
+            int ingredientType = Utility.getInputAndReturnIntegerWithPrompt("Choose ingredient type (1. Bread, 2. Meat, 3. Cheese, 4. Vegetable, 5. Sauce): ");
 
-            if (ingredientType.equalsIgnoreCase("BREAD") && breadAdded) {
-                logger.info("You can only add one bread type. Choose another ingredient.");
-                continue;
-            }
-
-            switch (ingredientType.toUpperCase()) {
-                case "BREAD" -> {
-                    Utility.print.accept(ConstantValue.BREAD_MENU);
-                    int ingredient = Utility.getInputAndReturnIntegerWithPrompt("Enter the ingredient (1. White, 2. Wheat, 3. Rye, 4. Wrap):");
-                    builder.addBread(switch (ingredient) {
-                        case 1 -> "WHITE";
-                        case 2 -> "WHEAT";
-                        case 3 -> "RYE";
-                        case 4 -> "WRAP";
-                        default -> throw new InvalidIngredientException("Invalid bread choice: " + ingredient);
-                    });
-                    breadAdded = true;
+            switch (ingredientType) {
+                case 1 -> {
+                    if (breadAdded) {
+                        logger.info("You can only add one bread type. Choose another ingredient.");
+                        Utility.println.accept("You can only add one bread type. Choose another ingredient.");
+                        continue;
+                    }
+                    boolean validBread = false;
+                    while (!validBread) {
+                        try {
+                            Utility.print.accept(ConstantValue.BREAD_MENU);
+                            int ingredient = Utility.getInputAndReturnIntegerWithPrompt("->");
+                            builder.addBread(switch (ingredient) {
+                                case 1 -> "WHITE";
+                                case 2 -> "WHEAT";
+                                case 3 -> "RYE";
+                                case 4 -> "WRAP";
+                                default -> throw new InvalidIngredientException("Invalid bread choice: " + ingredient);
+                            });
+                            breadAdded = true;
+                            validBread = true;
+                        } catch (InvalidIngredientException e) {
+                            Utility.println.accept("Invalid bread choice. Please try again.");
+                            logger.warn("Invalid bread choice. Please try again.");
+                        }
+                    }
                 }
-                case "MEAT" -> {
-                    Utility.print.accept(ConstantValue.MEAT_MENU);
-                    int ingredient = Utility.getInputAndReturnIntegerWithPrompt("Enter the meat option (1. Steak, 2. Ham, 3. Salami, 4. Roast Beef, 5. Chicken, 6. Bacon):");
-                    builder.addMeat(switch (ingredient) {
-                        case 1 -> "STEAK";
-                        case 2 -> "HAM";
-                        case 3 -> "SALAMI";
-                        case 4 -> "ROAST BEEF";
-                        case 5 -> "CHICKEN";
-                        case 6 -> "BACON";
-                        default -> throw new InvalidIngredientException("Invalid meat choice: " + ingredient);
-                    });
+                case 2 -> {
+                    boolean validMeat = false;
+                    while (!validMeat) {
+                        try {
+                            Utility.print.accept(ConstantValue.MEAT_MENU);
+                            int ingredient = Utility.getInputAndReturnIntegerWithPrompt("Enter the meat option:");
+                            builder.addMeat(switch (ingredient) {
+                                case 1 -> "STEAK";
+                                case 2 -> "HAM";
+                                case 3 -> "SALAMI";
+                                case 4 -> "ROAST BEEF";
+                                case 5 -> "CHICKEN";
+                                case 6 -> "BACON";
+                                default -> throw new InvalidIngredientException("Invalid meat choice: " + ingredient);
+                            });
+                            validMeat = true;
+                        } catch (InvalidIngredientException e) {
+                            Utility.println.accept("Invalid meat choice. Please try again.");
+                            logger.warn("Invalid meat choice. Please try again.");
+                        }
+                    }
                 }
-                case "CHEESE" -> {
-                    Utility.print.accept(ConstantValue.CHEESE_MENU);
-                    int ingredient = Utility.getInputAndReturnIntegerWithPrompt("Enter the cheese option (1. American, 2. Provolone, 3. Cheddar, 4. Swiss):");
-                    builder.addCheese(switch (ingredient) {
-                        case 1 -> "AMERICAN";
-                        case 2 -> "PROVOLONE";
-                        case 3 -> "CHEDDAR";
-                        case 4 -> "SWISS";
-                        default -> throw new InvalidIngredientException("Invalid cheese choice: " + ingredient);
-                    });
+                case 3 -> {
+                    boolean validCheese = false;
+                    while (!validCheese) {
+                        try {
+                            Utility.print.accept(ConstantValue.CHEESE_MENU);
+                            int ingredient = Utility.getInputAndReturnIntegerWithPrompt("Enter the cheese option:");
+                            builder.addCheese(switch (ingredient) {
+                                case 1 -> "AMERICAN";
+                                case 2 -> "PROVOLONE";
+                                case 3 -> "CHEDDAR";
+                                case 4 -> "SWISS";
+                                default -> throw new InvalidIngredientException("Invalid cheese choice: " + ingredient);
+                            });
+                            validCheese = true;
+                        } catch (InvalidIngredientException e) {
+                            Utility.println.accept("Invalid cheese choice. Please try again.");
+                            logger.warn("Invalid cheese choice. Please try again.");
+                        }
+                    }
                 }
-                case "VEGETABLE" -> {
-                    Utility.print.accept(ConstantValue.VEGETABLE_MENU);
-                    int ingredient = Utility.getInputAndReturnIntegerWithPrompt("Enter the vegetable option (1. Lettuce, 2. Peppers, 3. Onions, 4. Tomatoes, 5. Jalapenos, 6. Cucumbers, 7. Pickles, 8. Guacamole, 9. Mushrooms):");
-                    builder.addVegetable(switch (ingredient) {
-                        case 1 -> "LETTUCE";
-                        case 2 -> "PEPPERS";
-                        case 3 -> "ONIONS";
-                        case 4 -> "TOMATOES";
-                        case 5 -> "JALAPENOS";
-                        case 6 -> "CUCUMBERS";
-                        case 7 -> "PICKLES";
-                        case 8 -> "GUACAMOLE";
-                        case 9 -> "MUSHROOMS";
-                        default -> throw new InvalidIngredientException("Invalid vegetable choice: " + ingredient);
-                    });
+                case 4 -> {
+                    boolean validVegetable = false;
+                    while (!validVegetable) {
+                        try {
+                            Utility.print.accept(ConstantValue.VEGETABLE_MENU);
+                            int ingredient = Utility.getInputAndReturnIntegerWithPrompt("Enter the vegetable option:");
+                            builder.addVegetable(switch (ingredient) {
+                                case 1 -> "LETTUCE";
+                                case 2 -> "PEPPERS";
+                                case 3 -> "ONIONS";
+                                case 4 -> "TOMATOES";
+                                case 5 -> "JALAPENOS";
+                                case 6 -> "CUCUMBERS";
+                                case 7 -> "PICKLES";
+                                case 8 -> "GUACAMOLE";
+                                case 9 -> "MUSHROOMS";
+                                default -> throw new InvalidIngredientException("Invalid vegetable choice: " + ingredient);
+                            });
+                            validVegetable = true;
+                        } catch (InvalidIngredientException e) {
+                            Utility.println.accept("Invalid vegetable choice. Please try again.");
+                            logger.warn("Invalid vegetable choice. Please try again.");
+                        }
+                    }
                 }
-                case "SAUCE" -> {
-                    Utility.print.accept(ConstantValue.SAUCE_MENU);
-                    int ingredient = Utility.getInputAndReturnIntegerWithPrompt("Enter the sauce option (1. Mayo, 2. Mustard, 3. Ketchup, 4. Ranch, 5. Thousand Islands, 6. Vinaigrette):");
-                    builder.addSauce(switch (ingredient) {
-                        case 1 -> "MAYO";
-                        case 2 -> "MUSTARD";
-                        case 3 -> "KETCHUP";
-                        case 4 -> "RANCH";
-                        case 5 -> "THOUSAND ISLANDS";
-                        case 6 -> "VINAIGRETTE";
-                        default -> throw new InvalidIngredientException("Invalid sauce choice: " + ingredient);
-                    });
+                case 5 -> {
+                    boolean validSauce = false;
+                    while (!validSauce) {
+                        try {
+                            Utility.print.accept(ConstantValue.SAUCE_MENU);
+                            int ingredient = Utility.getInputAndReturnIntegerWithPrompt("Enter the sauce option:");
+                            builder.addSauce(switch (ingredient) {
+                                case 1 -> "MAYO";
+                                case 2 -> "MUSTARD";
+                                case 3 -> "KETCHUP";
+                                case 4 -> "RANCH";
+                                case 5 -> "THOUSAND ISLANDS";
+                                case 6 -> "VINAIGRETTE";
+                                default -> throw new InvalidIngredientException("Invalid sauce choice: " + ingredient);
+                            });
+                            validSauce = true;
+                        } catch (InvalidIngredientException e) {
+                            Utility.println.accept("Invalid sauce choice. Please try again.");
+                            logger.warn("Invalid sauce choice. Please try again.");
+                        }
+                    }
                 }
                 default -> logger.error("Unknown ingredient type: {}", ingredientType);
             }
 
-            addMoreIngredients = Utility.getInputAndReturnBooleanWithPrompt("Would you like to add another ingredient?");
+            addMoreIngredients = Utility.getInputAndReturnBooleanWithPrompt("Would you like to add another ingredient? (Y/N or Yes/No)");
         }
 
         this.sandwich = builder.build();
         sandwich.setName("Custom Sandwich");
+        logger.info("Your sandwich has been added to the cart! {}", sandwich.getName());
         order.getCart().add(sandwich);
+        Utility.println.accept("Your sandwich has been added to the cart!");
+        Utility.println.accept(sandwich.toString());
+
     }
 
+    /**
+     * Creates a preset sandwich with predefined ingredients.
+     *
+     * @param name the name of the sandwich
+     * @param size the size of the sandwich
+     * @param toasted whether the sandwich is toasted
+     * @param ingredients the ingredients of the sandwich
+     * @throws InvalidIngredientException if an invalid ingredient is chosen
+     */
     private void makePresetSandwich(String name, int size, boolean toasted, String... ingredients) throws InvalidIngredientException {
         Sandwich.Builder builder = new Sandwich.Builder(size, toasted);
         for (String ingredient : ingredients) {
@@ -161,16 +232,48 @@ public class AddSandwichCommand implements Command {
         this.sandwich = builder.build();
         sandwich.setName(name);
         order.getCart().add(sandwich);
+        logger.info("Your sandwich has been added to the cart! {}", sandwich.getName());
+        Utility.println.accept("Your sandwich has been added to the cart!");
+        Utility.println.accept(sandwich.toString());
     }
 
+    /**
+     * Prompts the user to choose the size of the sandwich.
+     *
+     * @return the chosen size
+     */
     private int chooseSize() {
-        return Utility.getInputAndReturnIntegerWithPrompt("Choose sandwich size: 4 (Small), 8 (Medium), or 12 (Large)");
+        int size = 8;
+        boolean validSize = false;
+        while (!validSize) {
+            try {
+                size = Utility.getInputAndReturnIntegerWithPrompt("Choose sandwich size: 4 (Small), 8 (Medium), or 12 (Large)");
+                if (size == 4 || size == 8 || size == 12) {
+                    validSize = true;
+                } else {
+                    Utility.println.accept("Invalid size choice. Please choose 4, 8, or 12.");
+                    logger.warn("Invalid size choice. Please choose 4, 8, or 12.");
+                }
+            } catch (Exception e) {
+                logger.warn("Invalid size choice.\n->");
+            }
+        }
+
+        return size;
     }
 
+    /**
+     * Prompts the user to choose whether the sandwich should be toasted.
+     *
+     * @return true if the sandwich should be toasted, false otherwise
+     */
     private boolean chooseToasting() {
         return Utility.getInputAndReturnBooleanWithPrompt("Would you like the sandwich toasted?");
     }
 
+    /**
+     * Executes the command to add a sandwich to the order.
+     */
     @Override
     public void execute() {
         run();

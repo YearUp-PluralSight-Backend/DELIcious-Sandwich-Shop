@@ -4,6 +4,7 @@ import com.pluralsight.entity.otherfood.Chips;
 import com.pluralsight.entity.otherfood.Drink;
 import com.pluralsight.entity.sandwich.Sandwich;
 import com.pluralsight.utils.ConstantValue;
+import com.pluralsight.utils.Utility;
 import lombok.Data;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -20,22 +21,33 @@ import java.util.Random;
 public class Order {
 
     private static final Logger logger = LogManager.getLogger(Order.class);
-
     private long orderNumber;
-    private String createTime;
+    private Shop shop;
+    private LocalDateTime createTime;
     private double totalPrice;
     private double totalCalories;
     private List<Food> cart;
 
-
     /**
      * Constructor to create an Order with a generated order number and current time.
+     * The shop is set to Year Up United, the address is 85 Broad Street, 6th Floor, New York, NY 10004.
      */
     public Order() {
         this.orderNumber = generatesOrderNumber();
-        createTime = LocalDateTime.now().format(ConstantValue.DATE_TIME_FORMATTER);
+        this.shop = new Shop("Year Up United", new Address("85 Broad Street, 6th Floor", "New York", "NY", "10004"), "(212) 785-3340", "Harry");
+        String formattedNow = LocalDateTime.now().format(ConstantValue.DATE_TIME_FORMATTER);
+        createTime = LocalDateTime.parse(formattedNow, ConstantValue.DATE_TIME_FORMATTER);
         cart = new ArrayList<>();
         logger.info("New order created with order number: {}", orderNumber);
+    }
+
+    /**
+     * Resets the order by clearing the cart and setting the total price to 0.
+     */
+    public void reset() {
+        cart.clear();
+        totalPrice = 0;
+        totalCalories = 0;
     }
 
     /**
@@ -51,7 +63,7 @@ public class Order {
     }
 
     /**
-     * calculate the total calories of all items in the cart
+     * Calculates the total calories of all items in the cart.
      *
      * @return the total calories of the order
      */
@@ -118,20 +130,37 @@ public class Order {
     }
 
     /**
-     * Adds food to the cart
-     * @param food the food will add to the cart
-     * @return the item being added to the cart
+     * Adds food to the cart.
+     *
+     * @param food the food to add to the cart
+     * @return true if the food was added successfully
      */
     public boolean addFood(Food food) {
         boolean add = cart.add(food);
-        logger.debug("added Food: {}", food);
-        return true;
+        logger.debug("Added food: {}", food);
+        return add;
     }
 
     /**
-     *  Reviews the food items in the cart
+     * Reviews the food items in the cart.
      */
     public void reviewCart() {
-        cart.forEach(System.out::println);
+        if (cart.isEmpty()) {
+            Utility.println.accept("Cart is empty");
+            logger.info("Cart is empty");
+        } else {
+            cart.forEach(System.out::println);
+            cart.forEach(food -> logger.info(food.toString()));
+        }
+    }
+
+    /**
+     * Prints the receipt for the order.
+     *
+     * @return the formatted receipt as a string
+     */
+    @Override
+    public String toString() {
+        return Utility.formatReceipt(this);
     }
 }

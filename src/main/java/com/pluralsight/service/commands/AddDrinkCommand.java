@@ -36,8 +36,12 @@ public class AddDrinkCommand implements Command {
     @Override
     public void execute() {
         order.getCart().add(drink);
-        logger.info("Drink added to your order (Order Number: {})\nName: {}\nPrice: ${}\nCalories: {}",
-                order.getOrderNumber(), drink.getName(), drink.getPrice(), drink.getCalories());
+        Utility.println.accept( drink.getName()+ " added to your order");
+        Utility.println.accept(drink.toString());
+        logger.info("{} added to your order (Order Number: {})",
+                drink.getName(),order.getOrderNumber());
+        order.setTotalCalories(order.getTotalCalories());
+        order.setTotalPrice(order.getTotalPrice());
     }
 
     /**
@@ -62,6 +66,7 @@ public class AddDrinkCommand implements Command {
                 int option = Utility.getInputAndReturnIntegerWithPrompt("->");
                 drinkBrand = DrinkType.getByMenuOption(option);
             } catch (IllegalArgumentException e) {
+                Utility.println.accept("Invalid option. Please try again.");
                 logger.error("Error fetching drink brand: ", e);
             }
         }
@@ -109,7 +114,16 @@ public class AddDrinkCommand implements Command {
                 drink.setCalories(250);
                 drink.setPrice(3.0);
             }
-            default -> logger.error("Unexpected size encountered: {}", size);
+            default -> {
+                Utility.println.accept("Unexpected size encountered: " + size);
+                logger.error("Unexpected size encountered: {}", size);
+            }
+        }
+
+        if (drinkBrand == DrinkType.WATER) {
+            drink.setCalories(0);
         }
     }
+
+
 }

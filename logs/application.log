@@ -1,0 +1,897 @@
+2024-11-14 20:51:40 DEBUG [main] Order - Generated order number: 4733
+2024-11-14 20:51:40 INFO  [main] Order - New order created with order number: 4733
+2024-11-14 20:51:44 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddSandwichCommand
+2024-11-14 20:51:47 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! BLT
+2024-11-14 20:53:54 DEBUG [main] Order - Generated order number: 5115
+2024-11-14 20:53:54 INFO  [main] Order - New order created with order number: 5115
+2024-11-14 20:53:58 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddSandwichCommand
+2024-11-14 20:54:01 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! BLT
+2024-11-14 20:54:26 DEBUG [main] Order - Generated order number: 120840
+2024-11-14 20:54:26 INFO  [main] Order - New order created with order number: 120840
+2024-11-14 20:54:29 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddSandwichCommand
+2024-11-14 20:54:31 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! BLT
+2024-11-14 20:55:59 DEBUG [main] Order - Generated order number: 17649
+2024-11-14 20:55:59 INFO  [main] Order - New order created with order number: 17649
+2024-11-14 20:56:08 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddSandwichCommand
+2024-11-14 20:56:09 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! BLT
+2024-11-14 20:57:54 DEBUG [main] Order - Generated order number: 8468
+2024-11-14 20:57:54 INFO  [main] Order - New order created with order number: 8468
+2024-11-14 20:57:59 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddChipsCommand
+2024-11-14 20:57:59 INFO  [main] AddChipsCommand - Lays added to your order (Order Number: 8468)
+2024-11-14 20:58:08 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddDrinkCommand
+2024-11-14 20:58:08 INFO  [main] AddDrinkCommand - Coca-Cola added to your order (Order Number: 8468)
+2024-11-14 20:58:12 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddSandwichCommand
+2024-11-14 20:58:14 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! BLT
+2024-11-14 20:59:14 DEBUG [main] Order - Generated order number: 123295
+2024-11-14 20:59:14 INFO  [main] Order - New order created with order number: 123295
+2024-11-14 20:59:21 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddSandwichCommand
+2024-11-14 20:59:24 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! BLT
+2024-11-14 20:59:26 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Philly Cheese Steak
+2024-11-14 20:59:28 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Chicken Bacon Ranch Melt
+2024-11-14 20:59:31 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Italian Sub
+2024-11-14 20:59:33 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Turkey Avocado Club
+2024-11-14 20:59:47 INFO  [main] AddSandwichCommand - Exiting the menu...
+2024-11-14 20:59:52 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddChipsCommand
+2024-11-14 20:59:52 INFO  [main] AddChipsCommand - Pringles added to your order (Order Number: 123295)
+2024-11-14 20:59:58 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddDrinkCommand
+2024-11-14 20:59:58 INFO  [main] AddDrinkCommand - Pepsi added to your order (Order Number: 123295)
+2024-11-14 21:00:02 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.ReviewOrderCommand
+2024-11-14 21:00:02 INFO  [main] Order - ===================================================
+			SANDWICH
+			Sandwich Name: BLT
+Size: MEDIUM			Toast: true
+===================================================
+	Name		Price		Calories
+   -WHITE		7.0		240.0
+   -BACON		2.0		120.0
+   -CHEDDAR		1.5		84.0
+   -LETTUCE		0.0		6.0
+   -TOMATOES		0.0		12.0
+   -RANCH		0.0		60.0
+===================================================
+
+2024-11-14 21:00:02 INFO  [main] Order - ===================================================
+			SANDWICH
+			Sandwich Name: Philly Cheese Steak
+Size: MEDIUM			Toast: true
+===================================================
+	Name		Price		Calories
+   -WHITE		7.0		240.0
+   -STEAK		2.0		144.0
+   -PROVOLONE		1.5		72.0
+   -ONIONS		0.0		18.0
+   -PEPPERS		0.0		12.0
+   -RANCH		0.0		60.0
+===================================================
+
+2024-11-14 21:00:02 INFO  [main] Order - ===================================================
+			SANDWICH
+			Sandwich Name: Chicken Bacon Ranch Melt
+Size: LARGE			Toast: true
+===================================================
+	Name		Price		Calories
+   -WHEAT		8.5		420.0
+   -CHICKEN		3.0		112.0
+   -BACON		3.0		140.0
+   -CHEDDAR		2.25		98.0
+   -RANCH		0.0		70.0
+===================================================
+
+2024-11-14 21:00:02 INFO  [main] Order - ===================================================
+			SANDWICH
+			Sandwich Name: Italian Sub
+Size: LARGE			Toast: false
+===================================================
+	Name		Price		Calories
+   -WRAP		8.5		350.0
+   -SALAMI		3.0		154.0
+   -HAM		3.0		125.99999999999999
+   -PEPPERONI		3.0		140.0
+   -PROVOLONE		2.25		84.0
+   -LETTUCE		0.0		7.0
+   -TOMATOES		0.0		14.0
+   -ONIONS		0.0		21.0
+   -VINAIGRETTE		0.0		35.0
+===================================================
+
+2024-11-14 21:00:02 INFO  [main] Order - ===================================================
+			SANDWICH
+			Sandwich Name: Turkey Avocado Club
+Size: LARGE			Toast: false
+===================================================
+	Name		Price		Calories
+   -RYE		8.5		280.0
+   -ROAST BEEF		3.0		182.0
+   -BACON		3.0		140.0
+   -SWISS		2.25		112.0
+   -LETTUCE		0.0		7.0
+   -TOMATOES		0.0		14.0
+   -AVOCADO		0.0		28.0
+   -MAYO		0.0		56.0
+===================================================
+
+2024-11-14 21:00:02 INFO  [main] Order - ====================================
+🥤 Pringles		Chips
+Price: $1.5		Calories: 130.0 kcal
+====================================
+2024-11-14 21:00:02 INFO  [main] Order - ====================================
+🥤 Pepsi		Size: SMALL
+Price: $2.0		Calories: 100.0 kcal
+====================================
+2024-11-14 21:01:45 DEBUG [main] Order - Generated order number: 68799
+2024-11-14 21:01:45 INFO  [main] Order - New order created with order number: 68799
+2024-11-14 21:01:51 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddChipsCommand
+2024-11-14 21:01:51 INFO  [main] AddChipsCommand - Lays added to your order (Order Number: 68799)
+2024-11-14 21:01:53 ERROR [main] OrderScreen - Invalid option. Please try again.
+2024-11-14 21:01:56 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.ReviewOrderCommand
+2024-11-14 21:01:56 DEBUG [main] Order - Calculated total calories: 130.0
+2024-11-14 21:01:56 INFO  [main] ReviewOrderCommand - Reviewing order: ════════════════════════════════════════════════════════════
+║  Subway		
+║  41-35 Washington St		
+║  Seattle, Washington, 113992		
+║  123-456-7890		
+║  Order Number: 68799		
+║  
+║  Order Summary
+║  Harry							║2024-11-14				21:01:45
+║  ════════════════════════════════════════════════════════════
+║  	Name			Price			Calories
+║  ════════════════════════════════════════════════════════════
+║  1) Lays		1.50		130.0
+║  ════════════════════════════════════════════════════════════
+║  Total Cost: 0.00
+║  Total Calories: 130.0
+║  ════════════════════════════════════════════════════════════
+║  Thank you for choosing Subway!
+║  ════════════════════════════════════════════════════════════
+
+2024-11-14 21:01:56 DEBUG [main] Order - Calculated total calories: 130.0
+2024-11-14 21:08:40 DEBUG [main] Order - Generated order number: 175547
+2024-11-14 21:08:40 INFO  [main] Order - New order created with order number: 175547
+2024-11-14 21:08:43 INFO  [main] CancelOrderCommand - Order is initialized for cancellation: 175547
+2024-11-14 21:08:44 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.CancelOrderCommand
+2024-11-14 21:08:44 INFO  [main] CancelOrderCommand - Order has been canceled.
+2024-11-14 21:08:47 WARN  [main] HomeScreen - Invalid input. Please try again.
+2024-11-14 21:08:49 WARN  [main] HomeScreen - Invalid input. Please try again.
+2024-11-14 21:08:50 WARN  [main] HomeScreen - Invalid input. Please try again.
+2024-11-14 21:08:52 WARN  [main] HomeScreen - Invalid input. Please try again.
+2024-11-14 21:08:53 DEBUG [main] Order - Generated order number: 134045
+2024-11-14 21:08:53 INFO  [main] Order - New order created with order number: 134045
+2024-11-14 21:09:15 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddChipsCommand
+2024-11-14 21:09:15 INFO  [main] AddChipsCommand - Lays added to your order (Order Number: 134045)
+2024-11-14 21:09:15 DEBUG [main] Order - Calculated total calories: 130.0
+2024-11-14 21:09:28 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddDrinkCommand
+2024-11-14 21:09:28 INFO  [main] AddDrinkCommand - Coca-Cola added to your order (Order Number: 134045)
+2024-11-14 21:09:28 DEBUG [main] Order - Calculated total calories: 380.0
+2024-11-14 21:09:32 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddSandwichCommand
+2024-11-14 21:09:35 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! BLT
+2024-11-14 21:09:52 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Philly Cheese Steak
+2024-11-14 21:10:06 ERROR [main] Utility - Invalid input: 'BREAD' is not a valid integer.
+java.lang.NumberFormatException: For input string: "BREAD"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67) ~[?:?]
+	at java.base/java.lang.Integer.parseInt(Integer.java:588) ~[?:?]
+	at java.base/java.lang.Integer.parseInt(Integer.java:685) ~[?:?]
+	at com.pluralsight.utils.Utility.getInputAndReturnIntegerWithPrompt(Utility.java:83) [classes/:?]
+	at com.pluralsight.service.commands.AddSandwichCommand.makeCustomizedSandwich(AddSandwichCommand.java:57) [classes/:?]
+	at com.pluralsight.service.commands.AddSandwichCommand.run(AddSandwichCommand.java:31) [classes/:?]
+	at com.pluralsight.service.commands.AddSandwichCommand.execute(AddSandwichCommand.java:242) [classes/:?]
+	at com.pluralsight.console_gui.OrderScreen.processOrderOption(OrderScreen.java:87) [classes/:?]
+	at com.pluralsight.console_gui.OrderScreen.displayOrderScreen(OrderScreen.java:59) [classes/:?]
+	at com.pluralsight.console_gui.HomeScreen.run(HomeScreen.java:47) [classes/:?]
+	at com.pluralsight.SandwichShopApplication.main(SandwichShopApplication.java:7) [classes/:?]
+2024-11-14 21:10:41 INFO  [main] AddSandwichCommand - You can only add one bread type. Choose another ingredient.
+2024-11-14 21:11:41 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Custom Sandwich
+2024-11-14 21:13:40 DEBUG [main] Order - Generated order number: 172079
+2024-11-14 21:13:40 INFO  [main] Order - New order created with order number: 172079
+2024-11-14 21:13:43 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddSandwichCommand
+2024-11-14 21:13:45 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! BLT
+2024-11-14 21:14:14 DEBUG [main] Order - Generated order number: 122258
+2024-11-14 21:14:14 INFO  [main] Order - New order created with order number: 122258
+2024-11-14 21:14:18 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddSandwichCommand
+2024-11-14 21:14:19 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! BLT
+2024-11-14 21:15:24 DEBUG [main] Order - Generated order number: 198875
+2024-11-14 21:15:24 INFO  [main] Order - New order created with order number: 198875
+2024-11-14 21:15:27 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddSandwichCommand
+2024-11-14 21:15:29 ERROR [main] AddSandwichCommand - Invalid option. Please try again.
+2024-11-14 21:15:33 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! BLT
+2024-11-14 21:16:26 DEBUG [main] Order - Generated order number: 87606
+2024-11-14 21:16:26 INFO  [main] Order - New order created with order number: 87606
+2024-11-14 21:16:32 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddSandwichCommand
+2024-11-14 21:16:34 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! BLT
+2024-11-14 21:17:50 WARN  [main] HomeScreen - Invalid input. Please try again.
+2024-11-14 21:17:52 DEBUG [main] Order - Generated order number: 169260
+2024-11-14 21:17:52 INFO  [main] Order - New order created with order number: 169260
+2024-11-14 21:17:55 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddSandwichCommand
+2024-11-14 21:17:58 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! BLT
+2024-11-14 21:18:34 DEBUG [main] Order - Generated order number: 146797
+2024-11-14 21:18:34 INFO  [main] Order - New order created with order number: 146797
+2024-11-14 21:18:37 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddSandwichCommand
+2024-11-14 21:18:39 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! BLT
+2024-11-14 21:19:15 DEBUG [main] Order - Generated order number: 48657
+2024-11-14 21:19:15 INFO  [main] Order - New order created with order number: 48657
+2024-11-14 21:19:21 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddSandwichCommand
+2024-11-14 21:19:23 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! BLT
+2024-11-14 21:19:44 DEBUG [main] Order - Generated order number: 29717
+2024-11-14 21:19:44 INFO  [main] Order - New order created with order number: 29717
+2024-11-14 21:19:49 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddSandwichCommand
+2024-11-14 21:19:51 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! BLT
+2024-11-14 21:20:13 DEBUG [main] Order - Generated order number: 81704
+2024-11-14 21:20:13 INFO  [main] Order - New order created with order number: 81704
+2024-11-14 21:20:16 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddSandwichCommand
+2024-11-14 21:20:18 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! BLT
+2024-11-14 21:20:38 DEBUG [main] Order - Generated order number: 73999
+2024-11-14 21:20:38 INFO  [main] Order - New order created with order number: 73999
+2024-11-14 21:20:45 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddDrinkCommand
+2024-11-14 21:20:45 INFO  [main] AddDrinkCommand - Sprite added to your order (Order Number: 73999)
+2024-11-14 21:20:45 DEBUG [main] Order - Calculated total calories: 100.0
+2024-11-14 21:20:49 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddSandwichCommand
+2024-11-14 21:20:52 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! BLT
+2024-11-14 21:20:59 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Philly Cheese Steak
+2024-11-14 21:21:03 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Chicken Bacon Ranch Melt
+2024-11-14 21:21:36 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Philly Cheese Steak
+2024-11-14 21:21:40 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Chicken Bacon Ranch Melt
+2024-11-14 21:21:43 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Italian Sub
+2024-11-14 21:21:53 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Turkey Avocado Club
+2024-11-14 21:21:57 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Veggie Delight
+2024-11-14 21:23:08 DEBUG [main] Order - Generated order number: 57447
+2024-11-14 21:23:08 INFO  [main] Order - New order created with order number: 57447
+2024-11-14 21:23:14 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddSandwichCommand
+2024-11-14 21:23:16 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! BLT
+2024-11-14 21:23:44 DEBUG [main] Order - Generated order number: 136802
+2024-11-14 21:23:44 INFO  [main] Order - New order created with order number: 136802
+2024-11-14 21:23:47 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddSandwichCommand
+2024-11-14 21:23:49 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! BLT
+2024-11-14 21:24:11 DEBUG [main] Order - Generated order number: 194291
+2024-11-14 21:24:11 INFO  [main] Order - New order created with order number: 194291
+2024-11-14 21:24:15 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddSandwichCommand
+2024-11-14 21:24:17 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! BLT
+2024-11-14 21:24:19 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Philly Cheese Steak
+2024-11-14 21:24:21 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Chicken Bacon Ranch Melt
+2024-11-14 21:24:52 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Italian Sub
+2024-11-14 21:25:10 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Veggie Delight
+2024-11-14 21:25:32 DEBUG [main] Order - Generated order number: 86167
+2024-11-14 21:25:32 INFO  [main] Order - New order created with order number: 86167
+2024-11-14 21:25:42 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddChipsCommand
+2024-11-14 21:25:42 INFO  [main] AddChipsCommand - Lays added to your order (Order Number: 86167)
+2024-11-14 21:25:42 DEBUG [main] Order - Calculated total calories: 130.0
+2024-11-14 21:25:46 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddSandwichCommand
+2024-11-14 21:25:51 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! BLT
+2024-11-14 21:26:30 DEBUG [main] Order - Generated order number: 188323
+2024-11-14 21:26:30 INFO  [main] Order - New order created with order number: 188323
+2024-11-14 21:26:35 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddChipsCommand
+2024-11-14 21:26:35 INFO  [main] AddChipsCommand - Lays added to your order (Order Number: 188323)
+2024-11-14 21:26:35 DEBUG [main] Order - Calculated total calories: 130.0
+2024-11-14 21:26:42 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddDrinkCommand
+2024-11-14 21:26:42 INFO  [main] AddDrinkCommand - Coca-Cola added to your order (Order Number: 188323)
+2024-11-14 21:26:42 DEBUG [main] Order - Calculated total calories: 230.0
+2024-11-14 21:26:47 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddSandwichCommand
+2024-11-14 21:27:11 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! BLT
+2024-11-14 21:27:14 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Philly Cheese Steak
+2024-11-14 21:27:29 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Chicken Bacon Ranch Melt
+2024-11-14 21:27:31 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Italian Sub
+2024-11-14 21:27:34 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Turkey Avocado Club
+2024-11-14 21:27:37 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Veggie Delight
+2024-11-14 21:28:22 DEBUG [main] Order - Generated order number: 145371
+2024-11-14 21:28:22 INFO  [main] Order - New order created with order number: 145371
+2024-11-14 21:28:25 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddSandwichCommand
+2024-11-14 21:28:27 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! BLT
+2024-11-14 21:28:33 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Chicken Bacon Ranch Melt
+2024-11-14 21:28:37 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Philly Cheese Steak
+2024-11-14 21:28:44 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Veggie Delight
+2024-11-14 21:28:49 INFO  [main] AddSandwichCommand - Exiting the menu...
+2024-11-14 21:28:54 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.ReviewOrderCommand
+2024-11-14 21:28:54 DEBUG [main] Order - Calculated total calories: 2286.0
+2024-11-14 21:28:54 INFO  [main] ReviewOrderCommand - Reviewing order: ════════════════════════════════════════════════════════════
+║  Subway		
+║  41-35 Washington St		
+║  Seattle, Washington, 113992		
+║  123-456-7890		
+║  Order Number: 145371		
+║  
+║  Order Summary
+║  Harry							║2024-11-14				21:28:22
+║  ════════════════════════════════════════════════════════════
+║  	Name			Price			Calories
+║  ════════════════════════════════════════════════════════════
+║  1) BLT - MEDIUM
+║     - WHITE		7.00		240.0
+║     - BACON		2.00		120.0
+║     - CHEDDAR		1.50		84.0
+║     - LETTUCE		0.00		6.0
+║     - TOMATOES		0.00		12.0
+║     - RANCH		0.00		60.0
+║  2) Chicken Bacon Ranch Melt - LARGE
+║     - WHEAT		8.50		420.0
+║     - CHICKEN		3.00		112.0
+║     - BACON		3.00		140.0
+║     - CHEDDAR		2.25		98.0
+║     - RANCH		0.00		70.0
+║  3) Philly Cheese Steak - MEDIUM
+║     - WHITE		7.00		240.0
+║     - STEAK		2.00		144.0
+║     - PROVOLONE		1.50		72.0
+║     - ONIONS		0.00		18.0
+║     - PEPPERS		0.00		12.0
+║     - RANCH		0.00		60.0
+║  4) Veggie Delight - LARGE
+║     - RYE		8.50		280.0
+║     - LETTUCE		0.00		7.0
+║     - TOMATOES		0.00		14.0
+║     - CUCUMBERS		0.00		7.0
+║     - PEPPERS		0.00		14.0
+║     - ONIONS		0.00		21.0
+║     - VINAIGRETTE		0.00		35.0
+║  ════════════════════════════════════════════════════════════
+║  Total Cost: 0.00
+║  Total Calories: 2286.0
+║  ════════════════════════════════════════════════════════════
+║  Thank you for choosing Subway!
+║  ════════════════════════════════════════════════════════════
+
+2024-11-14 21:28:54 DEBUG [main] Order - Calculated total calories: 2286.0
+2024-11-14 21:30:24 DEBUG [main] Order - Generated order number: 154272
+2024-11-14 21:30:24 INFO  [main] Order - New order created with order number: 154272
+2024-11-14 21:31:03 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddChipsCommand
+2024-11-14 21:31:03 INFO  [main] AddChipsCommand - Lays added to your order (Order Number: 154272)
+2024-11-14 21:31:03 DEBUG [main] Order - Calculated total calories: 130.0
+2024-11-14 21:31:10 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddDrinkCommand
+2024-11-14 21:31:10 INFO  [main] AddDrinkCommand - Pepsi added to your order (Order Number: 154272)
+2024-11-14 21:31:10 DEBUG [main] Order - Calculated total calories: 230.0
+2024-11-14 21:31:13 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddSandwichCommand
+2024-11-14 21:31:17 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Veggie Delight
+2024-11-14 21:31:20 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! BLT
+2024-11-14 21:31:22 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Philly Cheese Steak
+2024-11-14 21:31:26 INFO  [main] AddSandwichCommand - Exiting the menu...
+2024-11-14 21:31:29 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.ReviewOrderCommand
+2024-11-14 21:31:29 DEBUG [main] Order - Calculated total calories: 1676.0
+2024-11-14 21:31:29 INFO  [main] ReviewOrderCommand - Reviewing order: ════════════════════════════════════════════════════════════
+║  Subway		
+║  41-35 Washington St		
+║  Seattle, Washington, 113992		
+║  123-456-7890		
+║  Order Number: 154272		
+║  
+║  Order Summary
+║  Harry						2024-11-14				21:30:24
+║  ════════════════════════════════════════════════════════════
+║  	Name			Price			Calories
+║  ════════════════════════════════════════════════════════════
+║  1) Lays		1.50		130.0
+║  2) Pepsi			2.00			100.0
+║  3) Veggie Delight - LARGE
+║     - RYE		8.50		280.0
+║     - LETTUCE		0.00		7.0
+║     - TOMATOES		0.00		14.0
+║     - CUCUMBERS		0.00		7.0
+║     - PEPPERS		0.00		14.0
+║     - ONIONS		0.00		21.0
+║     - VINAIGRETTE		0.00		35.0
+║  4) BLT - MEDIUM
+║     - WHITE		7.00		240.0
+║     - BACON		2.00		120.0
+║     - CHEDDAR		1.50		84.0
+║     - LETTUCE		0.00		6.0
+║     - TOMATOES		0.00		12.0
+║     - RANCH		0.00		60.0
+║  5) Philly Cheese Steak - MEDIUM
+║     - WHITE		7.00		240.0
+║     - STEAK		2.00		144.0
+║     - PROVOLONE		1.50		72.0
+║     - ONIONS		0.00		18.0
+║     - PEPPERS		0.00		12.0
+║     - RANCH		0.00		60.0
+║  ════════════════════════════════════════════════════════════
+║  Total Cost: 0.00
+║  Total Calories: 1676.0
+║  ════════════════════════════════════════════════════════════
+║  Thank you for choosing Subway!
+║  ════════════════════════════════════════════════════════════
+
+2024-11-14 21:31:29 DEBUG [main] Order - Calculated total calories: 1676.0
+2024-11-14 21:32:03 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddChipsCommand
+2024-11-14 21:32:03 INFO  [main] AddChipsCommand - Ruffles added to your order (Order Number: 154272)
+2024-11-14 21:32:03 DEBUG [main] Order - Calculated total calories: 1806.0
+2024-11-14 21:32:06 ERROR [main] OrderScreen - Invalid option. Please try again.
+2024-11-14 21:32:10 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.ReviewOrderCommand
+2024-11-14 21:32:10 DEBUG [main] Order - Calculated total calories: 1806.0
+2024-11-14 21:32:10 INFO  [main] ReviewOrderCommand - Reviewing order: ════════════════════════════════════════════════════════════
+║  Subway		
+║  41-35 Washington St		
+║  Seattle, Washington, 113992		
+║  123-456-7890		
+║  Order Number: 154272		
+║  
+║  Order Summary
+║  Harry						2024-11-14				21:30:24
+║  ════════════════════════════════════════════════════════════
+║  	Name			Price			Calories
+║  ════════════════════════════════════════════════════════════
+║  1) Lays		1.50		130.0
+║  2) Pepsi			2.00			100.0
+║  3) Veggie Delight - LARGE
+║     - RYE		8.50		280.0
+║     - LETTUCE		0.00		7.0
+║     - TOMATOES		0.00		14.0
+║     - CUCUMBERS		0.00		7.0
+║     - PEPPERS		0.00		14.0
+║     - ONIONS		0.00		21.0
+║     - VINAIGRETTE		0.00		35.0
+║  4) BLT - MEDIUM
+║     - WHITE		7.00		240.0
+║     - BACON		2.00		120.0
+║     - CHEDDAR		1.50		84.0
+║     - LETTUCE		0.00		6.0
+║     - TOMATOES		0.00		12.0
+║     - RANCH		0.00		60.0
+║  5) Philly Cheese Steak - MEDIUM
+║     - WHITE		7.00		240.0
+║     - STEAK		2.00		144.0
+║     - PROVOLONE		1.50		72.0
+║     - ONIONS		0.00		18.0
+║     - PEPPERS		0.00		12.0
+║     - RANCH		0.00		60.0
+║  6) Ruffles		1.50		130.0
+║  ════════════════════════════════════════════════════════════
+║  Total Cost: 0.00
+║  Total Calories: 1806.0
+║  ════════════════════════════════════════════════════════════
+║  Thank you for choosing Subway!
+║  ════════════════════════════════════════════════════════════
+
+2024-11-14 21:32:10 DEBUG [main] Order - Calculated total calories: 1806.0
+2024-11-14 21:35:49 DEBUG [main] Order - Generated order number: 193529
+2024-11-14 21:35:49 INFO  [main] Order - New order created with order number: 193529
+2024-11-14 21:35:54 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddSandwichCommand
+2024-11-14 21:36:19 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! BLT
+2024-11-14 21:36:21 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Philly Cheese Steak
+2024-11-14 21:36:23 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Veggie Delight
+2024-11-14 21:36:26 INFO  [main] AddSandwichCommand - Exiting the menu...
+2024-11-14 21:36:31 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddChipsCommand
+2024-11-14 21:36:31 INFO  [main] AddChipsCommand - Lays added to your order (Order Number: 193529)
+2024-11-14 21:36:31 DEBUG [main] Order - Calculated total calories: 1576.0
+2024-11-14 21:36:47 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddDrinkCommand
+2024-11-14 21:36:47 INFO  [main] AddDrinkCommand - Pepsi added to your order (Order Number: 193529)
+2024-11-14 21:36:47 DEBUG [main] Order - Calculated total calories: 1676.0
+2024-11-14 21:36:50 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.ReviewOrderCommand
+2024-11-14 21:36:50 DEBUG [main] Order - Calculated total calories: 1676.0
+2024-11-14 21:36:50 INFO  [main] ReviewOrderCommand - Reviewing order: ════════════════════════════════════════════════════════════
+║  Subway		
+║  41-35 Washington St		
+║  Seattle, Washington, 113992		
+║  123-456-7890		
+║  Order Number: 193529		
+║  
+║  Order Summary
+║  Harry						2024-11-14				21:35:49
+║  ════════════════════════════════════════════════════════════
+║  	Name			Price			Calories
+║  ════════════════════════════════════════════════════════════
+║  1) BLT - MEDIUM
+║     - WHITE		7.00		240.0
+║     - BACON		    2.00		120.0
+║     - BACON		2.00		120.0
+║     - CHEDDAR		    1.50		84.0
+║     - CHEDDAR		1.50		84.0
+║     - LETTUCE		    0.00		6.0
+║     - LETTUCE		0.00		6.0
+║     - TOMATOES		    0.00		12.0
+║     - TOMATOES		0.00		12.0
+║     - RANCH		    0.00		60.0
+║     - RANCH		0.00		60.0
+║  2) Philly Cheese Steak - MEDIUM
+║     - WHITE		7.00		240.0
+║     - STEAK		    2.00		144.0
+║     - STEAK		2.00		144.0
+║     - PROVOLONE		    1.50		72.0
+║     - PROVOLONE		1.50		72.0
+║     - ONIONS		    0.00		18.0
+║     - ONIONS		0.00		18.0
+║     - PEPPERS		    0.00		12.0
+║     - PEPPERS		0.00		12.0
+║     - RANCH		    0.00		60.0
+║     - RANCH		0.00		60.0
+║  3) Veggie Delight - LARGE
+║     - RYE		8.50		280.0
+║     - LETTUCE		    0.00		7.0
+║     - LETTUCE		0.00		7.0
+║     - TOMATOES		    0.00		14.0
+║     - TOMATOES		0.00		14.0
+║     - CUCUMBERS		    0.00		7.0
+║     - CUCUMBERS		0.00		7.0
+║     - PEPPERS		    0.00		14.0
+║     - PEPPERS		0.00		14.0
+║     - ONIONS		    0.00		21.0
+║     - ONIONS		0.00		21.0
+║     - VINAIGRETTE		    0.00		35.0
+║     - VINAIGRETTE		0.00		35.0
+║  4) Lays		1.50		130.0
+║  5) Pepsi			2.00			100.0
+║  ════════════════════════════════════════════════════════════
+║  Total Cost: 0.00
+║  Total Calories: 1676.0
+║  ════════════════════════════════════════════════════════════
+║  Thank you for choosing Subway!
+║  ════════════════════════════════════════════════════════════
+
+2024-11-14 21:36:50 DEBUG [main] Order - Calculated total calories: 1676.0
+2024-11-14 21:37:51 DEBUG [main] Order - Generated order number: 54702
+2024-11-14 21:37:51 INFO  [main] Order - New order created with order number: 54702
+2024-11-14 21:37:54 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddSandwichCommand
+2024-11-14 21:37:56 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! BLT
+2024-11-14 21:37:59 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Philly Cheese Steak
+2024-11-14 21:38:01 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Veggie Delight
+2024-11-14 21:38:03 INFO  [main] AddSandwichCommand - Exiting the menu...
+2024-11-14 21:38:07 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.ReviewOrderCommand
+2024-11-14 21:38:07 DEBUG [main] Order - Calculated total calories: 1446.0
+2024-11-14 21:38:07 INFO  [main] ReviewOrderCommand - Reviewing order: ════════════════════════════════════════════════════════════
+║  Subway		
+║  41-35 Washington St		
+║  Seattle, Washington, 113992		
+║  123-456-7890		
+║  Order Number: 54702		
+║  
+║  Order Summary
+║  Harry						2024-11-14				21:37:51
+║  ════════════════════════════════════════════════════════════
+║  	Name			Price			Calories
+║  ════════════════════════════════════════════════════════════
+║  1) BLT - MEDIUM
+║     - WHITE		7.00		240.0
+║     - BACON		    2.00		120.0
+║     - BACON		2.00		120.0
+║     - CHEDDAR		    1.50		84.0
+║     - CHEDDAR		1.50		84.0
+║     - LETTUCE		    0.00		6.0
+║     - LETTUCE		0.00		6.0
+║     - TOMATOES		    0.00		12.0
+║     - TOMATOES		0.00		12.0
+║     - RANCH		    0.00		60.0
+║     - RANCH		0.00		60.0
+║  2) Philly Cheese Steak - MEDIUM
+║     - WHITE		7.00		240.0
+║     - STEAK		    2.00		144.0
+║     - STEAK		2.00		144.0
+║     - PROVOLONE		    1.50		72.0
+║     - PROVOLONE		1.50		72.0
+║     - ONIONS		    0.00		18.0
+║     - ONIONS		0.00		18.0
+║     - PEPPERS		    0.00		12.0
+║     - PEPPERS		0.00		12.0
+║     - RANCH		    0.00		60.0
+║     - RANCH		0.00		60.0
+║  3) Veggie Delight - LARGE
+║     - RYE		8.50		280.0
+║     - LETTUCE		    0.00		7.0
+║     - LETTUCE		0.00		7.0
+║     - TOMATOES		    0.00		14.0
+║     - TOMATOES		0.00		14.0
+║     - CUCUMBERS		    0.00		7.0
+║     - CUCUMBERS		0.00		7.0
+║     - PEPPERS		    0.00		14.0
+║     - PEPPERS		0.00		14.0
+║     - ONIONS		    0.00		21.0
+║     - ONIONS		0.00		21.0
+║     - VINAIGRETTE		    0.00		35.0
+║     - VINAIGRETTE		0.00		35.0
+║  ════════════════════════════════════════════════════════════
+║  Total Cost: 0.00
+║  Total Calories: 1446.0
+║  ════════════════════════════════════════════════════════════
+║  Thank you for choosing Subway!
+║  ════════════════════════════════════════════════════════════
+
+2024-11-14 21:38:07 DEBUG [main] Order - Calculated total calories: 1446.0
+2024-11-14 21:39:06 DEBUG [main] Order - Generated order number: 140722
+2024-11-14 21:39:06 INFO  [main] Order - New order created with order number: 140722
+2024-11-14 21:39:11 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddSandwichCommand
+2024-11-14 21:39:13 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! BLT
+2024-11-14 21:39:16 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Philly Cheese Steak
+2024-11-14 21:39:18 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Veggie Delight
+2024-11-14 21:39:23 INFO  [main] AddSandwichCommand - Exiting the menu...
+2024-11-14 21:39:27 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.ReviewOrderCommand
+2024-11-14 21:39:27 DEBUG [main] Order - Calculated total calories: 1446.0
+2024-11-14 21:39:27 INFO  [main] ReviewOrderCommand - Reviewing order: ════════════════════════════════════════════════════════════
+║  Subway		
+║  41-35 Washington St		
+║  Seattle, Washington, 113992		
+║  123-456-7890		
+║  Order Number: 140722		
+║  
+║  Order Summary
+║  Harry						2024-11-14				21:39:06
+║  ════════════════════════════════════════════════════════════
+║  	Name			Price			Calories
+║  ════════════════════════════════════════════════════════════
+║  1) BLT - MEDIUM
+║     - WHITE		7.00		240.0
+║     - BACON		2.00		120.0
+║     - BACON		2.00		120.0
+║     - CHEDDAR		1.50		84.0
+║     - CHEDDAR		1.50		84.0
+║     - LETTUCE		0.00		6.0
+║     - LETTUCE		0.00		6.0
+║     - TOMATOES	0.00		12.0
+║     - TOMATOES		0.00		12.0
+║     - RANCH		0.00		60.0
+║     - RANCH		0.00		60.0
+║  2) Philly Cheese Steak - MEDIUM
+║     - WHITE		7.00		240.0
+║     - STEAK		2.00		144.0
+║     - STEAK		2.00		144.0
+║     - PROVOLONE	1.50		72.0
+║     - PROVOLONE		1.50		72.0
+║     - ONIONS		0.00		18.0
+║     - ONIONS		0.00		18.0
+║     - PEPPERS		0.00		12.0
+║     - PEPPERS		0.00		12.0
+║     - RANCH		0.00		60.0
+║     - RANCH		0.00		60.0
+║  3) Veggie Delight - LARGE
+║     - RYE		8.50		280.0
+║     - LETTUCE		0.00		7.0
+║     - LETTUCE		0.00		7.0
+║     - TOMATOES	0.00		14.0
+║     - TOMATOES		0.00		14.0
+║     - CUCUMBERS	0.00		7.0
+║     - CUCUMBERS		0.00		7.0
+║     - PEPPERS		0.00		14.0
+║     - PEPPERS		0.00		14.0
+║     - ONIONS		0.00		21.0
+║     - ONIONS		0.00		21.0
+║     - VINAIGRETTE	0.00		35.0
+║     - VINAIGRETTE		0.00		35.0
+║  ════════════════════════════════════════════════════════════
+║  Total Cost: 0.00
+║  Total Calories: 1446.0
+║  ════════════════════════════════════════════════════════════
+║  Thank you for choosing Subway!
+║  ════════════════════════════════════════════════════════════
+
+2024-11-14 21:39:27 DEBUG [main] Order - Calculated total calories: 1446.0
+2024-11-14 21:40:43 DEBUG [main] Order - Generated order number: 168335
+2024-11-14 21:40:43 INFO  [main] Order - New order created with order number: 168335
+2024-11-14 21:40:47 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddSandwichCommand
+2024-11-14 21:40:51 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! BLT
+2024-11-14 21:40:52 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Philly Cheese Steak
+2024-11-14 21:40:58 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Veggie Delight
+2024-11-14 21:41:01 INFO  [main] AddSandwichCommand - Exiting the menu...
+2024-11-14 21:41:05 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.ReviewOrderCommand
+2024-11-14 21:41:05 DEBUG [main] Order - Calculated total calories: 1446.0
+2024-11-14 21:41:05 INFO  [main] ReviewOrderCommand - Reviewing order: ════════════════════════════════════════════════════════════
+║  Subway		
+║  41-35 Washington St		
+║  Seattle, Washington, 113992		
+║  123-456-7890		
+║  Order Number: 168335		
+║  
+║  Order Summary
+║  Harry						2024-11-14				21:40:43
+║  ════════════════════════════════════════════════════════════
+║  	Name			Price			Calories
+║  ════════════════════════════════════════════════════════════
+║  1) BLT - MEDIUM
+║     - WHITE		7.00		240.0
+║     - BACON		2.00		120.0
+║     - CHEDDAR		1.50		84.0
+║     - LETTUCE		0.00		6.0
+║     - TOMATOES0.00		12.0
+║     - RANCH		0.00		60.0
+║  2) Philly Cheese Steak - MEDIUM
+║     - WHITE		7.00		240.0
+║     - STEAK		2.00		144.0
+║     - PROVOLONE1.50		72.0
+║     - ONIONS		0.00		18.0
+║     - PEPPERS		0.00		12.0
+║     - RANCH		0.00		60.0
+║  3) Veggie Delight - LARGE
+║     - RYE		8.50		280.0
+║     - LETTUCE		0.00		7.0
+║     - TOMATOES0.00		14.0
+║     - CUCUMBERS0.00		7.0
+║     - PEPPERS		0.00		14.0
+║     - ONIONS		0.00		21.0
+║     - VINAIGRETTE0.00		35.0
+║  ════════════════════════════════════════════════════════════
+║  Total Cost: 0.00
+║  Total Calories: 1446.0
+║  ════════════════════════════════════════════════════════════
+║  Thank you for choosing Subway!
+║  ════════════════════════════════════════════════════════════
+
+2024-11-14 21:41:05 DEBUG [main] Order - Calculated total calories: 1446.0
+2024-11-14 21:42:32 DEBUG [main] Order - Generated order number: 160740
+2024-11-14 21:42:32 INFO  [main] Order - New order created with order number: 160740
+2024-11-14 21:42:43 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddChipsCommand
+2024-11-14 21:42:43 INFO  [main] AddChipsCommand - Lays added to your order (Order Number: 160740)
+2024-11-14 21:42:43 DEBUG [main] Order - Calculated total calories: 130.0
+2024-11-14 21:42:53 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddDrinkCommand
+2024-11-14 21:42:53 INFO  [main] AddDrinkCommand - Coca-Cola added to your order (Order Number: 160740)
+2024-11-14 21:42:53 DEBUG [main] Order - Calculated total calories: 230.0
+2024-11-14 21:42:57 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddSandwichCommand
+2024-11-14 21:43:04 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! BLT
+2024-11-14 21:43:20 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Philly Cheese Steak
+2024-11-14 21:43:25 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Veggie Delight
+2024-11-14 21:44:14 DEBUG [main] Order - Generated order number: 74674
+2024-11-14 21:44:14 INFO  [main] Order - New order created with order number: 74674
+2024-11-14 21:44:17 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddSandwichCommand
+2024-11-14 21:44:22 ERROR [main] Utility - Invalid input: 'SMALL' is not a valid integer.
+java.lang.NumberFormatException: For input string: "SMALL"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67) ~[?:?]
+	at java.base/java.lang.Integer.parseInt(Integer.java:588) ~[?:?]
+	at java.base/java.lang.Integer.parseInt(Integer.java:685) ~[?:?]
+	at com.pluralsight.utils.Utility.getInputAndReturnIntegerWithPrompt(Utility.java:83) [classes/:?]
+	at com.pluralsight.service.commands.AddSandwichCommand.chooseSize(AddSandwichCommand.java:222) [classes/:?]
+	at com.pluralsight.service.commands.AddSandwichCommand.makeCustomizedSandwich(AddSandwichCommand.java:52) [classes/:?]
+	at com.pluralsight.service.commands.AddSandwichCommand.run(AddSandwichCommand.java:31) [classes/:?]
+	at com.pluralsight.service.commands.AddSandwichCommand.execute(AddSandwichCommand.java:243) [classes/:?]
+	at com.pluralsight.console_gui.OrderScreen.processOrderOption(OrderScreen.java:87) [classes/:?]
+	at com.pluralsight.console_gui.OrderScreen.displayOrderScreen(OrderScreen.java:59) [classes/:?]
+	at com.pluralsight.console_gui.HomeScreen.run(HomeScreen.java:47) [classes/:?]
+	at com.pluralsight.SandwichShopApplication.main(SandwichShopApplication.java:7) [classes/:?]
+2024-11-14 21:44:38 INFO  [main] AddSandwichCommand - You can only add one bread type. Choose another ingredient.
+2024-11-14 21:45:01 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Custom Sandwich
+2024-11-14 21:45:24 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! BLT
+2024-11-14 21:45:28 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Philly Cheese Steak
+2024-11-14 21:45:33 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Chicken Bacon Ranch Melt
+2024-11-14 21:45:50 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Italian Sub
+2024-11-14 21:45:55 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Turkey Avocado Club
+2024-11-14 21:46:01 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Veggie Delight
+2024-11-14 21:48:41 DEBUG [main] Order - Generated order number: 116966
+2024-11-14 21:48:41 INFO  [main] Order - New order created with order number: 116966
+2024-11-14 21:48:44 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddSandwichCommand
+2024-11-14 21:48:47 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! BLT
+2024-11-14 21:48:50 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Philly Cheese Steak
+2024-11-14 21:48:52 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Chicken Bacon Ranch Melt
+2024-11-14 21:48:53 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Italian Sub
+2024-11-14 21:48:55 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Turkey Avocado Club
+2024-11-14 21:48:58 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Veggie Delight
+2024-11-14 21:49:43 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Custom Sandwich
+2024-11-14 21:53:08 DEBUG [main] Order - Generated order number: 170319
+2024-11-14 21:53:08 INFO  [main] Order - New order created with order number: 170319
+2024-11-14 21:53:15 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddChipsCommand
+2024-11-14 21:53:15 INFO  [main] AddChipsCommand - Pringles added to your order (Order Number: 170319)
+2024-11-14 21:53:15 DEBUG [main] Order - Calculated total calories: 130.0
+2024-11-14 21:53:18 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddSandwichCommand
+2024-11-14 21:53:21 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! BLT
+2024-11-14 21:53:24 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Philly Cheese Steak
+2024-11-14 21:53:26 ERROR [main] AddSandwichCommand - Invalid option. Please try again.
+2024-11-14 21:53:30 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Chicken Bacon Ranch Melt
+2024-11-14 21:53:41 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Italian Sub
+2024-11-14 21:53:51 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Turkey Avocado Club
+2024-11-14 21:53:55 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Veggie Delight
+2024-11-14 21:54:00 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! BLT
+2024-11-14 21:54:04 INFO  [main] AddSandwichCommand - Exiting the menu...
+2024-11-14 21:54:07 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.ReviewOrderCommand
+2024-11-14 21:54:07 DEBUG [main] Order - Calculated total calories: 4688.0
+2024-11-14 21:54:07 INFO  [main] ReviewOrderCommand - Reviewing order: ════════════════════════════════════════════════════════════
+║  Subway		
+║  41-35 Washington St		
+║  Seattle, Washington, 113992		
+║  123-456-7890		
+║  Order Number: 170319		
+║  
+║  Order Summary
+║  Harry						2024-11-14				21:53:08
+║  ════════════════════════════════════════════════════════════
+║  	Name			Price			Calories
+║  ════════════════════════════════════════════════════════════
+║  1) Pringles		1.50		130.0
+║  2) BLT - MEDIUM
+║     -WHITE               7.00		240.0
+║     -BACON               2.00		120.0
+║     -CHEDDAR             1.50		84.0
+║     -LETTUCE             0.00		6.0
+║     -TOMATOES            0.00		12.0
+║     -RANCH               0.00		60.0
+║  3) Philly Cheese Steak - MEDIUM
+║     -WHITE               7.00		240.0
+║     -STEAK               2.00		144.0
+║     -PROVOLONE           1.50		72.0
+║     -ONIONS              0.00		18.0
+║     -PEPPERS             0.00		12.0
+║     -RANCH               0.00		60.0
+║  4) Chicken Bacon Ranch Melt - LARGE
+║     -WHEAT               8.50		420.0
+║     -CHICKEN             3.00		112.0
+║     -BACON               3.00		140.0
+║     -CHEDDAR             2.25		98.0
+║     -RANCH               0.00		70.0
+║  5) Italian Sub - LARGE
+║     -WRAP                8.50		350.0
+║     -SALAMI              3.00		154.0
+║     -HAM                 3.00		126.0
+║     -PEPPERONI           3.00		140.0
+║     -PROVOLONE           2.25		84.0
+║     -LETTUCE             0.00		7.0
+║     -TOMATOES            0.00		14.0
+║     -ONIONS              0.00		21.0
+║     -VINAIGRETTE         0.00		35.0
+║  6) Turkey Avocado Club - LARGE
+║     -RYE                 8.50		280.0
+║     -ROAST BEEF          3.00		182.0
+║     -BACON               3.00		140.0
+║     -SWISS               2.25		112.0
+║     -LETTUCE             0.00		7.0
+║     -TOMATOES            0.00		14.0
+║     -AVOCADO             0.00		28.0
+║     -MAYO                0.00		56.0
+║  7) Veggie Delight - LARGE
+║     -RYE                 8.50		280.0
+║     -LETTUCE             0.00		7.0
+║     -TOMATOES            0.00		14.0
+║     -CUCUMBERS           0.00		7.0
+║     -PEPPERS             0.00		14.0
+║     -ONIONS              0.00		21.0
+║     -VINAIGRETTE         0.00		35.0
+║  8) BLT - MEDIUM
+║     -WHITE               7.00		240.0
+║     -BACON               2.00		120.0
+║     -CHEDDAR             1.50		84.0
+║     -LETTUCE             0.00		6.0
+║     -TOMATOES            0.00		12.0
+║     -RANCH               0.00		60.0
+║  ════════════════════════════════════════════════════════════
+║  Total Cost: 0.00
+║  Total Calories: 4688.0
+║  ════════════════════════════════════════════════════════════
+║  Thank you for choosing Subway!
+║  ════════════════════════════════════════════════════════════
+
+2024-11-14 21:54:07 DEBUG [main] Order - Calculated total calories: 4688.0
+2024-11-14 21:54:36 INFO  [main] CancelOrderCommand - Order is initialized for cancellation: 170319
+2024-11-14 21:54:37 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.CancelOrderCommand
+2024-11-14 21:54:37 INFO  [main] CancelOrderCommand - Order has been canceled.
+2024-11-14 21:59:43 DEBUG [main] Order - Generated order number: 54753
+2024-11-14 21:59:43 INFO  [main] Order - New order created with order number: 54753
+2024-11-14 21:59:48 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddChipsCommand
+2024-11-14 21:59:48 INFO  [main] AddChipsCommand - Lays added to your order (Order Number: 54753)
+2024-11-14 21:59:48 DEBUG [main] Order - Calculated total calories: 130.0
+2024-11-14 21:59:56 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddDrinkCommand
+2024-11-14 21:59:56 INFO  [main] AddDrinkCommand - Coca-Cola added to your order (Order Number: 54753)
+2024-11-14 21:59:56 DEBUG [main] Order - Calculated total calories: 230.0
+2024-11-14 22:00:06 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddChipsCommand
+2024-11-14 22:00:06 INFO  [main] AddChipsCommand - Ruffles added to your order (Order Number: 54753)
+2024-11-14 22:00:06 DEBUG [main] Order - Calculated total calories: 360.0
+2024-11-14 22:01:05 DEBUG [main] Order - Generated order number: 170323
+2024-11-14 22:01:05 INFO  [main] Order - New order created with order number: 170323
+2024-11-14 22:01:10 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddChipsCommand
+2024-11-14 22:01:10 INFO  [main] AddChipsCommand - Lays added to your order (Order Number: 170323)
+2024-11-14 22:01:10 DEBUG [main] Order - Calculated total calories: 130.0
+2024-11-14 22:01:19 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddDrinkCommand
+2024-11-14 22:01:19 INFO  [main] AddDrinkCommand - Water added to your order (Order Number: 170323)
+2024-11-14 22:01:19 DEBUG [main] Order - Calculated total calories: 130.0
+2024-11-14 22:01:22 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddSandwichCommand
+2024-11-14 22:01:25 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! BLT
+2024-11-14 22:01:33 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Philly Cheese Steak
+2024-11-14 22:01:35 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Chicken Bacon Ranch Melt
+2024-11-14 22:01:37 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Italian Sub
+2024-11-14 22:01:43 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Turkey Avocado Club
+2024-11-14 22:01:45 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! Veggie Delight
+2024-11-14 22:01:48 ERROR [main] AddSandwichCommand - Invalid option. Please try again.
+2024-11-14 22:01:54 INFO  [main] AddSandwichCommand - Exiting the menu...
+2024-11-14 22:01:58 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.CheckoutCommand
+2024-11-14 22:01:58 DEBUG [main] Order - Calculated total price: 86.25
+2024-11-14 22:01:58 INFO  [main] CheckoutCommand - Total price is 86.25
+2024-11-14 22:01:58 DEBUG [main] Order - Calculated total calories: 4166.0
+2024-11-14 22:01:58 INFO  [main] CheckoutCommand - Total calories is 4166.0
+2024-11-14 22:01:58 INFO  [main] GenerateReceipt - Printing receipt to console for order number: 170323
+2024-11-14 22:01:58 DEBUG [main] Order - Calculated total calories: 4166.0
+2024-11-14 22:01:58 INFO  [main] GenerateReceipt - Attempting to write receipt to file: receipts/20241114-220158.txt
+2024-11-14 22:01:58 DEBUG [main] Order - Calculated total calories: 4166.0
+2024-11-14 22:01:58 INFO  [main] GenerateReceipt - Receipt written to file successfully: receipts/20241114-220158.txt
+2024-11-14 22:01:58 INFO  [main] GenerateReceipt - Attempting to write receipt to file: receipts/20241114-220158.json
+2024-11-14 22:01:58 DEBUG [main] Order - Calculated total calories: 4166.0
+2024-11-14 22:01:58 DEBUG [main] Order - Number of chips in cart: 1
+2024-11-14 22:01:58 DEBUG [main] Order - Number of drinks in cart: 1
+2024-11-14 22:01:58 DEBUG [main] Order - Number of sandwiches in cart: 6
+2024-11-14 22:01:58 DEBUG [main] Order - Total number of items in cart: 8
+2024-11-14 22:01:58 INFO  [main] GenerateReceipt - Receipt written to file successfully: receipts/20241114-220158.json
+2024-11-14 22:01:58 INFO  [main] CheckoutCommand - Receipt written to file successfully.
+2024-11-14 22:01:58 INFO  [main] CheckoutCommand - Order reset successfully.
+2024-11-14 22:02:09 INFO  [main] CancelOrderCommand - Order is initialized for cancellation: 170323
+2024-11-14 22:02:11 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.CancelOrderCommand
+2024-11-14 22:02:11 INFO  [main] CancelOrderCommand - Order has been canceled.
+2024-11-14 22:03:57 DEBUG [main] Order - Generated order number: 170416
+2024-11-14 22:03:57 INFO  [main] Order - New order created with order number: 170416
+2024-11-14 22:04:01 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddSandwichCommand
+2024-11-14 22:04:02 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! BLT

@@ -33,15 +33,22 @@ public class CheckoutCommand implements Command {
             if (order != null) {
                 logger.info("Total price is {}", order.calculateTotalPrice());
                 logger.info("Total calories is {}", order.getTotalCalories());
-                GenerateReceipt.printReceiptToConsole(order);
-//                boolean successful = GenerateReceipt.writeReceiptToFile(order);
-//                if (successful) logger.info("Receipt written to file successfully.");
-//                else logger.error("Failed to write receipt to file.");
 
+                GenerateReceipt.printReceiptToConsole(order);
+                boolean textFile = GenerateReceipt.writeReceiptToTextFile(order);
+                boolean jsonFile = GenerateReceipt.writeReceiptToJsonFile(order);
+
+
+                if (textFile && jsonFile) {
+                    logger.info("Receipt written to file successfully.");
+                    order.reset(); // Clear the order after successful checkout
+                    logger.info("Order reset successfully.");
+                } else {
+                    logger.error("Failed to write receipt to file.");
+                }
             } else {
                 logger.warn("Order is null, cannot proceed with checkout.");
             }
-            logger.info("Order checked out successfully.");
         } catch (JsonProcessingException e) {
             logger.warn("Unable to print out the receipt ", e);
         }

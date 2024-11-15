@@ -1,6 +1,5 @@
 package com.pluralsight.entity.sandwich.toppings;
 
-import com.pluralsight.utils.ConstantValue;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -20,6 +19,8 @@ public class Bread extends SandwichIngredient {
      */
     public Bread(String name, double price, double calories) {
         super(name, price, calories);
+        logger.info("Creating Bread object with name: {}, price: {}, calories: {}", name, price, calories);
+
     }
 
     /**
@@ -32,5 +33,6 @@ public class Bread extends SandwichIngredient {
     public Bread(String name) {
         super(name);
     }
+
 
 }

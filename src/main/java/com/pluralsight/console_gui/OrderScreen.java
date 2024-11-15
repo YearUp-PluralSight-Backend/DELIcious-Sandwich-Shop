@@ -34,11 +34,12 @@ public class OrderScreen {
     }
 
     /**
-     *  create an order object
-     * @return new order
+     * Creates a new order object.
+     *
+     * @return a new Order instance
      */
     private Order newOrder() {
-        return  new Order();
+        return new Order();
     }
 
     /**
@@ -58,16 +59,18 @@ public class OrderScreen {
                     case 2 -> processOrderOption(new AddDrinkCommand(order));
                     case 3 -> processOrderOption(new AddSandwichCommand(order));
                     case 4 -> processOrderOption(new CheckoutCommand(order));
+                    case 5 -> processOrderOption(new ReviewOrderCommand(order));
                     case 0 -> {
                         processOrderOption(new CancelOrderCommand(order));
                         runningApplication = false;
-
                     }
                     default -> {
+                        Utility.print.accept("Please enter a valid number.");
                         logger.error("Invalid option. Please try again.");
                     }
                 }
             } catch (NumberFormatException e) {
+                Utility.print.accept("Please enter a valid number.");
                 logger.error("Please enter a valid number.{}", optionInput);
             }
         }

@@ -38,26 +38,27 @@ public class HomeScreen {
      */
     public void run() {
         boolean runningHomeScreen = true;
-        try {
-            while (runningHomeScreen) {
+        while (runningHomeScreen) {
+            try {
                 Utility.print.accept(ConstantValue.HOME_MENU);
                 String option = Utility.getInputAndReturnStringWithPrompt("->  ");
                 switch (option) {
-                    case "1" -> {
+                    case "1" /* new order */ -> {
                         orderScreen.displayOrderScreen();
-                        Utility.loadingAnimation(4);
+                        Utility.loadingAnimation(3);
                     }
-                    case "2" -> runningHomeScreen = false;
+                    case "2" /* exit */ -> runningHomeScreen = false;
+                    default -> {
+                        Utility.println.accept("Invalid input. Please try again. (1 or 2)");
+                        logger.warn("Invalid input. Please try again.");
+                    }
                 }
+            } catch (Exception e) {
+                // Utility.println.accept("Invalid input. Please try again. (1 or 2)");
+                logger.warn("Invalid input. Please try again.", e);
             }
-        } finally {
-            updateAndPrintReceipt();
         }
-    }
 
-    /**
-     * Updates and prints the receipt-file.mustache
-     */
-    private void updateAndPrintReceipt() {
+        Utility.closeScanner();
     }
 }

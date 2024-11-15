@@ -30,6 +30,20 @@ public class AddChipsCommand implements Command {
     }
 
     /**
+     * Executes the command to add chips to the order.
+     */
+    @Override
+    public void execute() {
+        order.getCart().add(chips);
+        Utility.println.accept(chips.getName() + " added to your order");
+        Utility.println.accept(chips.toString());
+        logger.info("{} added to your order (Order Number: {})",
+                chips.getName(), order.getOrderNumber());
+        order.setTotalCalories(order.getTotalCalories());
+        order.setTotalPrice(order.getTotalPrice());
+    }
+
+    /**
      * Initializes the attributes of the chips.
      */
     private void initializeChipsAttributes() {
@@ -40,6 +54,7 @@ public class AddChipsCommand implements Command {
                 int option = Utility.getInputAndReturnIntegerWithPrompt("->");
                 chipBrand = ChipBrand.getByMenuOption(option);
             } catch (IllegalArgumentException e) {
+                Utility.println.accept("Invalid option. Please try again.");
                 logger.error("Error fetching chip brand: ", e);
             }
         }
@@ -49,13 +64,4 @@ public class AddChipsCommand implements Command {
         chips.setCalories(130);
     }
 
-    /**
-     * Executes the command to add chips to the order.
-     */
-    @Override
-    public void execute() {
-        order.getCart().add(chips);
-        logger.info("Chips added to your order (Order Number: {})\nName: {}\nPrice: ${}\nCalories: {}",
-                order.getOrderNumber(), chips.getName(), chips.getPrice(), chips.getCalories());
-    }
 }

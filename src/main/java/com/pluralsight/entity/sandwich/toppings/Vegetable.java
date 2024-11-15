@@ -1,11 +1,15 @@
 package com.pluralsight.entity.sandwich.toppings;
 
 import com.pluralsight.utils.ConstantValue;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * Class representing a vegetable ingredient for a sandwich.
  */
 public class Vegetable extends SandwichIngredient {
+
+    private static final Logger logger = LogManager.getLogger(Vegetable.class);
 
     /**
      * Constructor to create a Vegetable with a specified name.
@@ -15,6 +19,7 @@ public class Vegetable extends SandwichIngredient {
      */
     public Vegetable(String name) {
         super(name);
+        logger.info("Creating a Vegetable object with name: " + name);
     }
 
 }

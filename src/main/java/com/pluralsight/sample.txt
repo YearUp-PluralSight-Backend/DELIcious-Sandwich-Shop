@@ -1,0 +1,28 @@
+ My store
+ Jun 4th 12:56pm
+ ----------------------------------
+   1)  Sandwich (6' wheat)  $5
+        Ham
+        /w Extra     $0.50
+        Swiss
+        /w Extra     $0.50
+        Peppers
+    ITEM Total cost                 $6
+    ITEM Calories                   600
+
+ 2)  Sandwich      $5
+         Ham
+         /w Extra     $0.50
+         Swiss
+         /w Extra     $0.50
+         Peppers
+     ITEM Total cost                 $6
+     ITEM Calories                   600
+
+  3)  Chips   $3
+          BBQ
+      ITEM Total cost                $3
+
+   ORDER TOTAL
+        TOTAL COST                   $15
+
