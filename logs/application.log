@@ -1765,3 +1765,94 @@ java.lang.NumberFormatException: For input string: "S"
 2024-11-15 00:19:46 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.CancelOrderCommand
 2024-11-15 00:19:46 INFO  [main] CancelOrderCommand - Order has been canceled.
 2024-11-15 00:19:50 WARN  [main] HomeScreen - Invalid input. Please try again.
+2024-11-15 00:35:56 DEBUG [main] Order - Generated order number: 30962
+2024-11-15 00:35:56 INFO  [main] Order - New order created with order number: 30962
+2024-11-15 00:36:12 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddChipsCommand
+2024-11-15 00:36:12 INFO  [main] AddChipsCommand - Lays added to your order (Order Number: 30962)
+2024-11-15 00:36:12 DEBUG [main] Order - Calculated total calories: 130.0
+2024-11-15 00:36:21 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddDrinkCommand
+2024-11-15 00:36:21 INFO  [main] AddDrinkCommand - Coca-Cola added to your order (Order Number: 30962)
+2024-11-15 00:36:21 DEBUG [main] Order - Calculated total calories: 230.0
+2024-11-15 00:36:25 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.AddSandwichCommand
+2024-11-15 00:36:31 INFO  [main] Meat - Creating a Meat with name: BACON
+2024-11-15 00:36:31 INFO  [main] Cheese - Creating a Cheese with name: CHEDDAR
+2024-11-15 00:36:31 INFO  [main] Vegetable - Creating a Vegetable object with name: LETTUCE
+2024-11-15 00:36:31 INFO  [main] Vegetable - Creating a Vegetable object with name: TOMATOES
+2024-11-15 00:36:31 INFO  [main] Sauce - Creating a Sauce with name: RANCH
+2024-11-15 00:36:31 INFO  [main] AddSandwichCommand - Your sandwich has been added to the cart! BLT
+2024-11-15 00:36:36 INFO  [main] AddSandwichCommand - Exiting the menu...
+2024-11-15 00:36:50 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.ReviewOrderCommand
+2024-11-15 00:36:50 DEBUG [main] Order - Calculated total price: 14.0
+2024-11-15 00:36:50 DEBUG [main] Order - Number of sandwiches in cart: 1
+2024-11-15 00:36:50 DEBUG [main] Order - Number of chips in cart: 1
+2024-11-15 00:36:50 DEBUG [main] Order - Number of drinks in cart: 1
+2024-11-15 00:36:50 DEBUG [main] Order - Calculated total calories: 752.0
+2024-11-15 00:36:50 INFO  [main] ReviewOrderCommand - Reviewing order: ║║═══║║═══║║═══║║═══║║═══║║═══║║═══║║═══║║═══║║═══║║═══║║═══║║
+
+║  			Year Up Sandwich Shop		
+║  			85 Broad Street, 6th Floor		
+║  			New York, NY, 10004		
+║  			(212) 785-3340		
+║  			Order Number: 30962		
+║  			
+║  ════════════════════════════════════════════════════════════
+║  			Order Summary
+║  Harry					2024-11-15			00:35:56
+║  ════════════════════════════════════════════════════════════
+║  	Ingredient             Price     		Calories
+║  ════════════════════════════════════════════════════════════
+║  1)Lays                  1.50		130.0
+║  2)Coca-Cola             2.00		100.0
+║  3) BLT - MEDIUM
+║     -WHITE               7.00		240.0
+║     -BACON               2.00		120.0
+║     -CHEDDAR             1.50		84.0
+║     -LETTUCE             0.00		6.0
+║     -TOMATOES            0.00		12.0
+║     -RANCH               0.00		60.0
+║  ════════════════════════════════════════════════════════════
+║  Total Items: 3
+║  Total Sandwiches: 1
+║  Total Chips: 1
+║  Total Drinks: 1
+║  Total Cost: 14.00
+║  Total Calories: 752.0
+║  ════════════════════════════════════════════════════════════
+║  Thank you for choosing Year Up Sandwich Shop!
+║  ════════════════════════════════════════════════════════════
+║  © 2024 Year Up IP LLC®
+║  Developed by Yiming Gao
+║║═══║║═══║║═══║║═══║║═══║║═══║║═══║║═══║║═══║║═══║║═══║║═══║║
+
+2024-11-15 00:36:50 DEBUG [main] Order - Number of sandwiches in cart: 1
+2024-11-15 00:36:50 DEBUG [main] Order - Number of chips in cart: 1
+2024-11-15 00:36:50 DEBUG [main] Order - Number of drinks in cart: 1
+2024-11-15 00:36:50 DEBUG [main] Order - Calculated total calories: 752.0
+2024-11-15 00:37:27 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.CheckoutCommand
+2024-11-15 00:37:27 DEBUG [main] Order - Calculated total price: 14.0
+2024-11-15 00:37:27 INFO  [main] CheckoutCommand - Total price is 14.0
+2024-11-15 00:37:27 DEBUG [main] Order - Calculated total calories: 752.0
+2024-11-15 00:37:27 INFO  [main] CheckoutCommand - Total calories is 752.0
+2024-11-15 00:37:27 INFO  [main] GenerateReceipt - Printing receipt to console for order number: 30962
+2024-11-15 00:37:27 DEBUG [main] Order - Number of sandwiches in cart: 1
+2024-11-15 00:37:27 DEBUG [main] Order - Number of chips in cart: 1
+2024-11-15 00:37:27 DEBUG [main] Order - Number of drinks in cart: 1
+2024-11-15 00:37:27 DEBUG [main] Order - Calculated total calories: 752.0
+2024-11-15 00:37:27 INFO  [main] GenerateReceipt - Attempting to write receipt to file: receipts/20241115-003727.txt
+2024-11-15 00:37:27 DEBUG [main] Order - Number of sandwiches in cart: 1
+2024-11-15 00:37:27 DEBUG [main] Order - Number of chips in cart: 1
+2024-11-15 00:37:27 DEBUG [main] Order - Number of drinks in cart: 1
+2024-11-15 00:37:27 DEBUG [main] Order - Calculated total calories: 752.0
+2024-11-15 00:37:27 INFO  [main] GenerateReceipt - Receipt written to file successfully: receipts/20241115-003727.txt
+2024-11-15 00:37:27 INFO  [main] GenerateReceipt - Attempting to write receipt to file: receipts/20241115-003727.json
+2024-11-15 00:37:27 DEBUG [main] Order - Calculated total calories: 752.0
+2024-11-15 00:37:27 DEBUG [main] Order - Number of sandwiches in cart: 1
+2024-11-15 00:37:27 DEBUG [main] Order - Number of chips in cart: 1
+2024-11-15 00:37:27 DEBUG [main] Order - Number of drinks in cart: 1
+2024-11-15 00:37:27 DEBUG [main] Order - Total number of items in cart: 3
+2024-11-15 00:37:27 INFO  [main] GenerateReceipt - Receipt written to file successfully: receipts/20241115-003727.json
+2024-11-15 00:37:27 INFO  [main] CheckoutCommand - Receipt written to file successfully.
+2024-11-15 00:37:27 INFO  [main] CheckoutCommand - Order reset successfully.
+2024-11-15 00:37:53 INFO  [main] CancelOrderCommand - Order is initialized for cancellation: 30962
+2024-11-15 00:37:53 INFO  [main] OrderScreen - Executing command: class com.pluralsight.service.commands.CancelOrderCommand
+2024-11-15 00:37:53 INFO  [main] CancelOrderCommand - Order has been canceled.
