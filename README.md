@@ -54,7 +54,9 @@ and process orders with detailed receipts.
 </div>
 <div style="align-content: center">
   <h4>Receipt</h4>
-      <div><img src="images/receipt.png" alt="receipt"></div>
+    <h5>Home Screen</h5>
+      <div><img src="images/text_receipt.png" alt="text format receipt"></div>
+      <div><img src="images/json_receipt.png" alt="json format receipt"></div>
 </div>
 
 <div style="align-content: center">
@@ -85,14 +87,14 @@ UML Class Diagram
   <h3>UML Class Diagram</h3>
     <P>the class is a diagram that shows the relationship between objects in a system. It describes the structure of the system by showing the system's classes, attributes, operations, and the relationships among the classes.
 </p>  
-    <img src="diagram/UML_class.pdf" alt="Class Diagram">
+    <img src="diagram/UML_class.png" alt="Class Diagram">
   
 </div>
 
 <div style="align-content: center">
   <h3>UML Use Case Diagram</h3>
     <P>A use case diagram is a graphical representation of the interactions between the system and the actors that use the system. It shows the relationship between the actors and the use cases within the system.</p>
-  <img src="diagram/UML_Use_case_diagram.pdf" alt="UML Use Case Diagram">
+  <img src="diagram/UML_Use_case_diagram.png" alt="UML Use Case Diagram">
 </div>
 
 
