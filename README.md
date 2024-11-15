@@ -24,7 +24,7 @@ and process orders with detailed receipts.
   create a personalized sandwich.
 - **Preset Sandwiches:** Users can also select preset sandwich combinations from the menu.
 - **Order Processing:** The application calculates the total cost and calories of the order.
-- **Receipt Generation:** After checkout, a detailed receipt is generated and saved as a JSON file.
+- **Receipt Generation:** After checkout, a detailed receipt is generated and saved as JSON and Text file.
 - **User-Friendly Interface:** A console-based UI that interacts with users, displaying relevant information and guiding
   them through the ordering process.
 
